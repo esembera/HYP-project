@@ -1,42 +1,68 @@
-# Nuxt 3 Minimal Starter
+# T08 - Template (Vercel)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is the implementation of the project for Vercel + Supabase
 
-## Setup
+## Preliminary steps
+As usual, the first things to do are:
+- moving inside the folder with the terminal (or opening the project with VSCode) and then using:
 
-Make sure to install the dependencies:
+      npm install
 
-```bash
-# yarn
-yarn install
+- To run the project you have to use:
 
-# npm
-npm install
+      npm run dev
 
-# pnpm
-pnpm install
-```
+    or
 
-## Development Server
+      npm run dev -- -o
+    
+    to automatically open your project in a new tab of your browser.
 
-Start the development server on `http://localhost:3000`
+## Configuration
+To make the project work on GH-Pages there are a few steps to do:
+- install gh-pages
 
-```bash
-npm run dev
-```
+      npm install @nuxtjs/supabase --save-dev
 
-## Production
+- add the module to the nuxt.config.ts file:
 
-Build the application for production:
+      export default defineNuxtConfig({
+        modules: ['@nuxtjs/supabase'],
+      })
 
-```bash
-npm run build
-```
+- add SUPABASE_URL and SUPABASE_KEY to the .env (for local use):
 
-Locally preview production build:
+      SUPABASE_URL="<Supabase URL>"
+      SUPABASE_KEY="<Supabase API Key>"
 
-```bash
-npm run preview
-```
+## Deployment
+Vercel is connected to your repository. Any time you push something on the main/master branch, Vercel will automatically retrieve the project, build it and deploy it.
+This is why it's better to have two branches:
+- one for deployment
+- one for development
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+In general, the command to build the "ready to deploy" project is:
+   
+    npm run build
+
+## Content
+The project contains:
+- 5 components
+  - Card
+  - SmallCard
+  - TextImage
+  - TheFooter
+  - TheHeader
+- 1 layout: default
+- 1 error page (currently it's not displayed properly when the project is generated)
+- 7 pages reachable at:
+  - /
+  - /contact
+  - /about
+  - /dogs
+  - /dogs/:id
+  - /locations
+  - /locations/:id
+- The server implemented using the serverless implementation with the Supabase functionality
+
+Most of the content is commented to explain how things works.
