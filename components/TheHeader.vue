@@ -2,39 +2,54 @@
     Header of the page
 -->
 <template>
-    <header>
-        <h1>The Dog Shelter</h1>
-        <nav>
-            <NuxtLink to = "/">HOME</NuxtLink>
-            <NuxtLink to = "/dogs">DOGS</NuxtLink>
-            <NuxtLink to = "/locations">LOCATIONS</NuxtLink>
-            <NuxtLink to = "/about">ABOUT US</NuxtLink>
-            <NuxtLink to = "/contact">CONTACT US</NuxtLink>
-        </nav>
-    </header>
+  <header>
+    <NuxtLink to="/"><SvgIcon /></NuxtLink>
+    <nav>
+      <NuxtLink to="/about" class="link"
+        ><div class="navElement">About us</div></NuxtLink
+      >
+      <NuxtLink to="/people" class="link"
+        ><div class="navElement">People</div></NuxtLink
+      >
+      <NuxtLink to="/projects" class="link"
+        ><div class="navElement">Projects</div></NuxtLink
+      >
+      <NuxtLink to="/areas" class="link"
+        ><div class="navElement">Areas</div></NuxtLink
+      >
+      <NuxtLink to="/contact" class="link"
+        ><div class="navElement">Contact us</div></NuxtLink
+      >
+    </nav>
+  </header>
 </template>
 
 <style>
-    header
-    {
-        background-color: orange;
-    }
+header {
+  padding: 10px 30px 10px 30px;
+  margin-bottom: 5px;
+  background-color: #ff006b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    header
-    {
-        padding: 0px 20px 0px 20px;
-        margin-bottom: 5px;
-        border-bottom: 5px solid brown;
-        
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+nav {
+  display: flex;
+  gap: 30px;
+}
 
-    nav {
-        display: flex;
-        gap: 30px;
-        font-size: 17pt;
-        font-weight: bold;
-    }
+.navElement {
+  color: #181717;
+  font-size: 1.25rem;
+  font-family: sans-serif Black;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.link {
+  color: #181717;
+  font-family: sans-serif;
+  text-decoration: none;
+}
 </style>
