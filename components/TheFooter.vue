@@ -1,65 +1,77 @@
 <template>
   <footer>
-    <div class="container">
-      <nav class="nav-container">
-        <div class="column">
-          <div class="row heading1" style="justify-content: center">
-            Connect
-          </div>
-          <div class="row option">
-            <div class="rowColumn">
-              <Icon name="mdi:twitter" size="20px" />
+    <div class="flex-container">
+      <div class="rectangle">
+        <SvgIcon style="margin-top: 5%; margin-left: 50%" />
+      </div>
+      <div class="container">
+        <nav class="nav-container">
+          <div class="column">
+            <div class="row heading1" style="justify-content: center">
+              Connect
             </div>
-            <div class="rowColumn">
-              <span style="padding-left: 3%">@zenventures</span>
+            <div class="row option">
+              <div class="rowColumn">
+                <Icon name="mdi:twitter" size="20px" />
+              </div>
+              <div class="rowColumn">
+                <span style="padding-left: 3%">@zenventures</span>
+              </div>
+            </div>
+            <div class="row option">
+              <div class="rowColumn">
+                <Icon name="mdi:instagram" size="20px" />
+              </div>
+              <div class="rowColumn">
+                <span style="padding-left: 3%"> @zen.ventures </span>
+              </div>
+            </div>
+            <div class="row option">
+              <div class="rowColumn">
+                <Icon name="ic:baseline-tiktok" size="20px" />
+              </div>
+              <div class="rowColumn">
+                <span style="padding-left: 3%">@zenadventures</span>
+              </div>
             </div>
           </div>
-          <div class="row option">
-            <div class="rowColumn">
-              <Icon name="mdi:instagram" size="20px" />
+          <div class="column">
+            <div class="row heading1" style="justify-content: center">
+              Explore
             </div>
-            <div class="rowColumn">
-              <span style="padding-left: 3%"> @zen.ventures </span>
+            <div class="row option">
+              <NuxtLink to="/people" class="link">People</NuxtLink>
             </div>
-          </div>
-          <div class="row option">
-            <div class="rowColumn">
-              <Icon name="ic:baseline-tiktok" size="20px" />
+            <div class="row option">
+              <NuxtLink to="/projects" class="link">Projects</NuxtLink>
             </div>
-            <div class="rowColumn">
-              <span style="padding-left: 3%">@zenadventures</span>
+            <div class="row option">
+              <NuxtLink to="/areas" class="link">Areas</NuxtLink>
             </div>
           </div>
-        </div>
-        <div class="column">
-          <div class="row heading1" style="justify-content: center">
-            Explore
+          <div class="column">
+            <div class="row heading1" style="justify-content: center">Info</div>
+            <div class="row option">
+              <NuxtLink to="/about" class="link">About us</NuxtLink>
+            </div>
+            <div class="row option">
+              <NuxtLink to="/contact" class="link">Contact us</NuxtLink>
+            </div>
           </div>
-          <div class="row option">
-            <NuxtLink to="/people" class="link">People</NuxtLink>
-          </div>
-          <div class="row option">
-            <NuxtLink to="/projects" class="link">Projects</NuxtLink>
-          </div>
-          <div class="row option">
-            <NuxtLink to="/areas" class="link">Areas</NuxtLink>
-          </div>
-        </div>
-        <div class="column">
-          <div class="row heading1" style="justify-content: center">Info</div>
-          <div class="row option">
-            <NuxtLink to="/about" class="link">About us</NuxtLink>
-          </div>
-          <div class="row option">
-            <NuxtLink to="/contact" class="link">Contact us</NuxtLink>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   </footer>
 </template>
 
 <style>
+.rectangle {
+  width: 350px;
+  height: 100px;
+  background: #f6f6f6;
+  border-radius: 292px;
+  transform: translateX(-50%);
+}
 footer {
   background: #ff006b;
   flex-shrink: 0;
@@ -69,9 +81,15 @@ footer {
   height: 6.25rem;
   min-height: 1vh;
 }
+
+.flex-container {
+  display: flex;
+}
+
 .container {
   display: flex;
   justify-content: center;
+  margin-left: 20%;
 }
 
 .nav-container {
