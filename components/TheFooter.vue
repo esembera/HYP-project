@@ -1,21 +1,40 @@
 <template>
   <footer>
     <div class="container">
-      <nav>
+      <nav class="nav-container">
         <div class="column">
-          <div class="row heading1">Connect</div>
-          <div class="row option">
-            <font-awesome-icon :icon="['fab', 'twitter']" />@zenventures
+          <div class="row heading1" style="justify-content: center">
+            Connect
           </div>
           <div class="row option">
-            <font-awesome-icon :icon="['fab', 'instagram']" />@zen.ventures
+            <div class="rowColumn">
+              <Icon name="mdi:twitter" size="20px" />
+            </div>
+            <div class="rowColumn">
+              <span style="padding-left: 3%">@zenventures</span>
+            </div>
           </div>
           <div class="row option">
-            <font-awesome-icon :icon="['fab', 'tiktok']" />@zenadventures
+            <div class="rowColumn">
+              <Icon name="mdi:instagram" size="20px" />
+            </div>
+            <div class="rowColumn">
+              <span style="padding-left: 3%"> @zen.ventures </span>
+            </div>
+          </div>
+          <div class="row option">
+            <div class="rowColumn">
+              <Icon name="ic:baseline-tiktok" size="20px" />
+            </div>
+            <div class="rowColumn">
+              <span style="padding-left: 3%">@zenadventures</span>
+            </div>
           </div>
         </div>
         <div class="column">
-          <div class="row heading1">Explore</div>
+          <div class="row heading1" style="justify-content: center">
+            Explore
+          </div>
           <div class="row option">
             <NuxtLink to="/people" class="link">People</NuxtLink>
           </div>
@@ -27,7 +46,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="row heading1">Info</div>
+          <div class="row heading1" style="justify-content: center">Info</div>
           <div class="row option">
             <NuxtLink to="/about" class="link">About us</NuxtLink>
           </div>
@@ -41,30 +60,33 @@
 </template>
 
 <style>
+footer {
+  background: #ff006b;
+  flex-shrink: 0;
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+  height: 6.25rem;
+  min-height: 1vh;
+}
 .container {
   display: flex;
-  width: 100%;
   justify-content: center;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
-.option {
-  color: #181717;
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  margin: 0 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
 }
 
 .heading1 {
@@ -75,19 +97,17 @@ nav {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 5px;
 }
-footer {
-  background: #ff006b;
-  flex-shrink: 0;
-  text-align: center;
-  margin-top: auto;
-  padding: 10px;
-  height: 6.25rem;
-  min-height: 1vh;
-}
-.link {
+
+.option {
   color: #181717;
-  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
   font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 5px;
 }
 </style>
