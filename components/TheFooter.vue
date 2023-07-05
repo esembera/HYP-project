@@ -2,7 +2,7 @@
   <footer>
     <div class="flex-container">
       <div class="rectangle">
-        <SvgIcon style="margin-top: 5%; margin-left: 50%" />
+        <SvgIcon style="margin-top: 7.5%; margin-left: 55%" />
       </div>
       <div class="container">
         <nav class="nav-container">
@@ -78,7 +78,7 @@ footer {
   text-align: center;
   margin-top: auto;
   padding: 10px;
-  height: 6.25rem;
+  height: 7.5rem;
   min-height: 1vh;
 }
 
@@ -88,7 +88,7 @@ footer {
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-left: 20%;
 }
 
