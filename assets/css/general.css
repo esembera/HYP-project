@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "ArchivoBlack";
+  src: url("../fonts/ArchivoBlack.ttf");
+}
+
 html,
 body {
   height: 100%;
@@ -6,4 +11,24 @@ body {
 body {
   background-color: white;
   margin: 0;
+}
+
+.image-after {
+  content: "";
+  background-image: url("../img/underline.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+.colorPink {
+  background-color: #ff006b;
+}
+
+.colorBlue {
+  background-color: #66c5ff;
+}
+
+.colorGreen {
+  background-color: #b3dc3d;
 }
