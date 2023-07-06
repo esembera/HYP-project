@@ -27,7 +27,7 @@
     </div>
     <div class="text-center md:mx-auto">
       <button
-        class="colorPink text-black font-bold py-2 px-8 rounded-2xl mt-5"
+        class="colorPink text-black font-bold py-2 px-8 rounded-2xl mt-5 hover:shadow-2xl"
         style="font-family: ArchivoBlack"
       >
         <NuxtLink to="/contact"> Contact us </NuxtLink>
@@ -86,6 +86,44 @@
         </NuxtLink>
       </div>
     </div>
+    <span class="text-4xl" style="font-family: ArchivoBlack"
+      >RECENT INVESTMENTS</span
+    >
+    <div class="text-left flex w-full mt-5 mb-5">
+      <div class="w-1/5 text-center colorPink h-auto m-1 hover:shadow-2xl">
+        <NuxtLink to="#">
+          <img src="../assets/img/projects/calm.png" />
+        </NuxtLink>
+      </div>
+      <div class="w-1/5 text-center colorBlue h-auto m-1 hover:shadow-2xl">
+        <NuxtLink to="#">
+          <img src="../assets/img/projects/sara.png" />
+        </NuxtLink>
+      </div>
+      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <NuxtLink to="#">
+          <img src="../assets/img/projects/lovin.png" />
+        </NuxtLink>
+      </div>
+      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <NuxtLink to="#">
+          <img src="../assets/img/projects/mini.png" />
+        </NuxtLink>
+      </div>
+      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <NuxtLink to="#">
+          <img src="../assets/img/projects/publicAnchor.jpg" />
+        </NuxtLink>
+      </div>
+    </div>
+    <NuxtLink to="/projects">
+      <span class="text-3xl open-sans"
+        >view <span class="font-bold">PROJECTS</span> <SvgArrow class="inline"
+      /></span>
+    </NuxtLink>
+    <span class="text-4xl block mt-10 mb-10" style="font-family: ArchivoBlack"
+      >WHAT SHOULD YOU KNOW ABOUT?</span
+    >
   </div>
 </template>
 
