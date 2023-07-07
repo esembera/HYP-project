@@ -1,5 +1,5 @@
 <template>
-    <div class="peopleCard">
+    <div>
         <div>
             <img :src="`/_nuxt/assets/img/people/${person.image}`" id="peopleImg" />
         </div>

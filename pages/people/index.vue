@@ -6,7 +6,7 @@
             Form used to add dogs to the database
         -->
     <div id="peopleTitle">We are on your TEAM.</div>
-    <div id="colorContainer"><img id="colorImg" src="../../assets/img/people/color.png" /></div>
+    <div id="colorContainer"><img src="../../assets/img/people/color.png" /></div>
     <div id="peopleDescription">
         We're a team of visionaries, driven by our love for innovation and the thrill of discovering untapped potential.
         With diverse backgrounds and a shared entrepreneurial spirit, we bring a personal touch to every partnership. We're
@@ -35,14 +35,13 @@ export default {
                 { id: 9, name: 'Lucas Ramirez', position: 'PARTNER', image: 'shutterstock_2066581961.jpg', description: 'Lucas Ramirez, a graduate of Harvard Business School, has a diverse background in finance and entrepreneurship. As a former founder of a successful startup, he specializes in financial technology investments and strategic business growth.', projects: ['Nobu', 'Lovin'] },
                 { id: 10, name: 'Ethan Wallace', position: 'PARTNER', image: 'shutterstock_2156291057.jpg', description: ' Ethan Wallace is a finance prodigy who honed his skills through years of experience in investment banking. With a strong track record of successful deal-making, he brings a strategic and analytical approach to Zen Ventures\' investment decisions.', projects: ['Kim'] },
                 { id: 11, name: 'Emily Baker', position: 'PARTNER', image: 'shutterstock_1469286803.jpg', description: 'Emily Baker, a graduate of Stanford\'s School of Engineering, is a software engineer-turned-venture capitalist. With her technical background and experience as a product manager at a tech company, she brings a unique perspective to Zen Ventures.', projects: ['Mini', 'Nerve'] },
-
             ]
         };
     }
 };
 </script>
 
-<style>
+<style scoped>
 #peopleTitle {
     font-size: 100px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -76,5 +75,4 @@ export default {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
 </style>
