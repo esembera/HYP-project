@@ -1,10 +1,34 @@
-html, body
-{
-    height: 100%; 
+@font-face {
+  font-family: "ArchivoBlack";
+  src: url("../fonts/ArchivoBlack.ttf");
 }
 
-body
-{
-    background-color: lightgoldenrodyellow;
-    margin: 0;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+}
+
+.image-after {
+  content: "";
+  background-image: url("../img/underline.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+.colorPink {
+  background-color: #ff006b;
+}
+
+.colorBlue {
+  background-color: #66c5ff;
+}
+
+.colorGreen {
+  background-color: #b3dc3d;
 }

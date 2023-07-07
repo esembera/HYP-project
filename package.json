@@ -9,14 +9,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@nuxtjs/supabase": "^0.3.8",
     "nuxt": "^3.3.3"
+=======
+    "@nuxtjs/supabase": "^0.3.5",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "nuxt": "^3.3.3",
+    "nuxt-icon": "^0.4.2"
+>>>>>>> 18f11c1775874e26762f20b2c30eab0a82fd3d04
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
     "express": "^4.18.2",
     "lorem-ipsum": "^2.0.8",
     "sequelize": "^6.30.0",
