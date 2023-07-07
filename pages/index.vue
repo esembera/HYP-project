@@ -121,9 +121,31 @@
         >view <span class="font-bold">PROJECTS</span> <SvgArrow class="inline"
       /></span>
     </NuxtLink>
-    <span class="text-4xl block mt-10 mb-10" style="font-family: ArchivoBlack"
+    <span class="text-4xl block mt-10" style="font-family: ArchivoBlack"
       >WHAT SHOULD YOU KNOW ABOUT?</span
     >
+    <BlackLine />
+    <span class="text-3xl block mt-10 open-sans"
+      >Does Zen Ventures only invest in particular areas or industries?</span
+    >
+    <BlackLine />
+    <span class="text-3xl block mt-10 open-sans"
+      >Is it ever too early to approach Zen Ventures about investing?</span
+    >
+    <BlackLine />
+    <span class="text-3xl block mt-10 open-sans"
+      >How long does the investment process take?</span
+    >
+    <BlackLine />
+    <span class="text-3xl block mt-10 open-sans"
+      >How will Zen Ventures support you in future financings?</span
+    >
+    <BlackLine />
+    <NuxtLink to="/about">
+      <span class="text-3xl open-sans block mb-20"
+        >view <span class="font-bold">FAQ</span> <SvgArrow class="inline"
+      /></span>
+    </NuxtLink>
   </div>
 </template>
 
