@@ -86,66 +86,70 @@
         </NuxtLink>
       </div>
     </div>
-    <span class="text-4xl" style="font-family: ArchivoBlack"
-      >RECENT INVESTMENTS</span
-    >
-    <div class="text-left flex w-full mt-5 mb-5">
-      <div class="w-1/5 text-center colorPink h-auto m-1 hover:shadow-2xl">
-        <NuxtLink to="#">
-          <img src="../assets/img/projects/calm.png" />
-        </NuxtLink>
+    <div class="w-4/5 md:mx-auto">
+      <span class="text-4xl" style="font-family: ArchivoBlack"
+        >RECENT INVESTMENTS</span
+      >
+      <div class="text-left flex w-full mt-5 mb-5">
+        <div class="w-1/5 text-center colorPink h-auto m-1 hover:shadow-2xl">
+          <NuxtLink to="#">
+            <img src="../assets/img/projects/calm.png" />
+          </NuxtLink>
+        </div>
+        <div class="w-1/5 text-center colorBlue h-auto m-1 hover:shadow-2xl">
+          <NuxtLink to="#">
+            <img src="../assets/img/projects/sara.png" />
+          </NuxtLink>
+        </div>
+        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+          <NuxtLink to="#">
+            <img src="../assets/img/projects/lovin.png" />
+          </NuxtLink>
+        </div>
+        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+          <NuxtLink to="#">
+            <img src="../assets/img/projects/mini.png" />
+          </NuxtLink>
+        </div>
+        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+          <NuxtLink to="#">
+            <img src="../assets/img/projects/publicAnchor.jpg" />
+          </NuxtLink>
+        </div>
       </div>
-      <div class="w-1/5 text-center colorBlue h-auto m-1 hover:shadow-2xl">
-        <NuxtLink to="#">
-          <img src="../assets/img/projects/sara.png" />
-        </NuxtLink>
-      </div>
-      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
-        <NuxtLink to="#">
-          <img src="../assets/img/projects/lovin.png" />
-        </NuxtLink>
-      </div>
-      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
-        <NuxtLink to="#">
-          <img src="../assets/img/projects/mini.png" />
-        </NuxtLink>
-      </div>
-      <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
-        <NuxtLink to="#">
-          <img src="../assets/img/projects/publicAnchor.jpg" />
-        </NuxtLink>
-      </div>
+      <NuxtLink to="/projects">
+        <span class="text-3xl open-sans"
+          >view <span class="font-bold">PROJECTS</span>&nbsp;<SvgArrow
+            class="inline mb-2"
+        /></span>
+      </NuxtLink>
+      <span class="text-4xl block mt-10" style="font-family: ArchivoBlack"
+        >WHAT SHOULD YOU KNOW ABOUT?</span
+      >
+      <BlackLine />
+      <span class="text-3xl block mt-10 open-sans"
+        >Does Zen Ventures only invest in particular areas or industries?</span
+      >
+      <BlackLine />
+      <span class="text-3xl block mt-10 open-sans"
+        >Is it ever too early to approach Zen Ventures about investing?</span
+      >
+      <BlackLine />
+      <span class="text-3xl block mt-10 open-sans"
+        >How long does the investment process take?</span
+      >
+      <BlackLine />
+      <span class="text-3xl block mt-10 open-sans"
+        >How will Zen Ventures support you in future financings?</span
+      >
+      <BlackLine />
+      <NuxtLink to="/about">
+        <span class="text-3xl open-sans block mb-20"
+          >view <span class="font-bold">FAQ</span>&nbsp;
+          <SvgArrow class="inline mb-2"
+        /></span>
+      </NuxtLink>
     </div>
-    <NuxtLink to="/projects">
-      <span class="text-3xl open-sans"
-        >view <span class="font-bold">PROJECTS</span> <SvgArrow class="inline"
-      /></span>
-    </NuxtLink>
-    <span class="text-4xl block mt-10" style="font-family: ArchivoBlack"
-      >WHAT SHOULD YOU KNOW ABOUT?</span
-    >
-    <BlackLine />
-    <span class="text-3xl block mt-10 open-sans"
-      >Does Zen Ventures only invest in particular areas or industries?</span
-    >
-    <BlackLine />
-    <span class="text-3xl block mt-10 open-sans"
-      >Is it ever too early to approach Zen Ventures about investing?</span
-    >
-    <BlackLine />
-    <span class="text-3xl block mt-10 open-sans"
-      >How long does the investment process take?</span
-    >
-    <BlackLine />
-    <span class="text-3xl block mt-10 open-sans"
-      >How will Zen Ventures support you in future financings?</span
-    >
-    <BlackLine />
-    <NuxtLink to="/about">
-      <span class="text-3xl open-sans block mb-20"
-        >view <span class="font-bold">FAQ</span> <SvgArrow class="inline"
-      /></span>
-    </NuxtLink>
   </div>
 </template>
 
