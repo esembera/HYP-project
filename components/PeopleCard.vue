@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <img :src="`/_nuxt/assets/img/people/${person.image}`" id="peopleImg" />
+            <img :src="`/img/people/${person.image}`" id="peopleImg" />
         </div>
         <div id="peopleName">{{ person.name }}</div>
         <div id="peoplePosition">{{ person.position }}</div>

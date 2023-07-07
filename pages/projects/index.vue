@@ -22,7 +22,7 @@
     <div id="projectsGrid">
         <div class="projectContainer" v-for="project in projects" :key="project.id" @mouseover="setHoveredItem(project.id)"
             @mouseleave="clearHoveredItem">
-            <img class="projectImage" :src="`/_nuxt/assets/img/projects/${project.image}`" />
+            <img class="projectImage" :src="`/img/projects/${project.image}`" />
             <div class="detailsButton" v-if="project.id == hoveredProject">Details</div>
         </div>
         <div id="lastImage">YOUR BRAND CAN BE HERE TOO</div>
