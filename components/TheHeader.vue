@@ -1,6 +1,17 @@
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
 <template>
-  <header>
-    <NuxtLink to="/"><SvgIcon /></NuxtLink>
+  <header :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }">
+    <NuxtLink
+      to="/"
+      @click="
+        {
+          activeMenuItem = 'home';
+        }
+      "
+      ><SvgIcon
+    /></NuxtLink>
     <div class="burger-menu" @click="toggleMenu">
       <div class="bar"></div>
       <div class="bar"></div>
@@ -16,14 +27,14 @@
               to="/about"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu"
+              @click="toggleMenu, (activeMenuItem = 'about')"
               >About us</NuxtLink
             >
             <NuxtLink
               to="/about/faq"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu"
+              @click="toggleMenu, (activeMenuItem = 'faq')"
               >FAQ</NuxtLink
             >
           </div>
@@ -32,28 +43,28 @@
           to="/people"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu"
+          @click="toggleMenu, (activeMenuItem = 'people')"
           >People</NuxtLink
         >
         <NuxtLink
           to="/projects"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu"
+          @click="toggleMenu, (activeMenuItem = 'projects')"
           >Projects</NuxtLink
         >
         <NuxtLink
           to="/areas"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu"
+          @click="toggleMenu, (activeMenuItem = 'areas')"
           >Areas</NuxtLink
         >
         <NuxtLink
           to="/contact"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu"
+          @click="toggleMenu, (activeMenuItem = 'contact')"
           >Contact us</NuxtLink
         >
       </div>
@@ -66,11 +77,25 @@ export default {
   data() {
     return {
       showMenu: false,
+      activeMenuItem: null,
     };
   },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
+      this.activeMenuItem = null;
+    },
+    getMenuItemColor(menuItem) {
+      const colorMap = {
+        home: "#ff006b",
+        people: "#66C5FF",
+        projects: "#A582FF",
+        areas: "#B3DC3D",
+        contact: "#FF006B",
+        about: "#FF006B",
+        faq: "#00ffff",
+      };
+      return colorMap[menuItem] || "#ff006b"; // Default color for the header
     },
   },
   mounted() {
@@ -88,7 +113,6 @@ export default {
 header {
   padding: 10px 30px 10px 30px;
   margin-bottom: 5px;
-  background-color: #ff006b;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +172,6 @@ nav {
 }
 
 .navElement {
-  color: #181717;
   font-size: 1.25rem;
   font-family: sans-serif Black;
   font-style: normal;
@@ -157,7 +180,6 @@ nav {
 }
 
 .link {
-  color: #181717;
   font-family: sans-serif;
   text-decoration: none;
 }
@@ -166,6 +188,11 @@ nav {
   color: #fff;
   font-family: sans-serif;
   text-decoration: none;
+}
+
+.menu-item-selected {
+  /* Default color for the header when no menu item is selected */
+  background-color: #ff006b;
 }
 
 @media (max-width: 768px) {

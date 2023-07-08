@@ -1,5 +1,10 @@
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+console.log(activeMenuItem);
+</script>
+
 <template>
-  <footer>
+  <footer :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }">
     <div class="flex-container">
       <div class="rectangle">
         <SvgIcon style="margin-top: 7.5%; margin-left: 55%" />
@@ -63,6 +68,28 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  props: {
+    activeMenuItem: String,
+  },
+  methods: {
+    getMenuItemColor(menuItem) {
+      const colorMap = {
+        home: "#ff006b",
+        people: "#66C5FF",
+        projects: "#A582FF",
+        areas: "#B3DC3D",
+        contact: "#FF006B",
+        about: "#FF006B",
+        faq: "#00ffff",
+      };
+      return colorMap[menuItem] || "#ff006b"; // Default color for the footer
+    },
+  },
+};
+</script>
 
 <style>
 .rectangle {
