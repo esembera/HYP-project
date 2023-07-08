@@ -143,7 +143,7 @@
         >How will Zen Ventures support you in future financings?</span
       >
       <BlackLine />
-      <NuxtLink to="/about">
+      <NuxtLink to="/about/faq">
         <span class="text-3xl open-sans block mb-20"
           >view <span class="font-bold">FAQ</span>&nbsp;
           <SvgArrow class="inline mb-2"
