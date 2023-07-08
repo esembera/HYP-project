@@ -148,8 +148,9 @@ export default {
 }
 
 #projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     /* Three columns with equal width */
     grid-gap: 13px;
     margin-left: 5%;
@@ -206,6 +207,8 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
+    width: 15%;
+    margin: 7px;
 }
 
 .detailsButton {
@@ -236,7 +239,8 @@ hr {
     height: 5px;
     border: none;
     background-color: black;
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 20px;
 }
 </style>
