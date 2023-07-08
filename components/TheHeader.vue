@@ -1,28 +1,88 @@
-<!--
-    Header of the page
--->
 <template>
   <header>
     <NuxtLink to="/"><SvgIcon /></NuxtLink>
-    <nav>
-      <NuxtLink to="/about" class="link"
-        ><div class="navElement">About us</div></NuxtLink
-      >
-      <NuxtLink to="/people" class="link"
-        ><div class="navElement">People</div></NuxtLink
-      >
-      <NuxtLink to="/projects" class="link"
-        ><div class="navElement">Projects</div></NuxtLink
-      >
-      <NuxtLink to="/areas" class="link"
-        ><div class="navElement">Areas</div></NuxtLink
-      >
-      <NuxtLink to="/contact" class="link"
-        ><div class="navElement">Contact us</div></NuxtLink
-      >
+    <div class="burger-menu" @click="toggleMenu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav :class="{ 'show-menu': showMenu }">
+      <div class="close-menu" @click="toggleMenu">X</div>
+      <div class="menu-items">
+        <div class="dropdown">
+          <span class="link navElement hover:cursor-pointer">About us</span>
+          <div class="dropdown-content">
+            <NuxtLink
+              to="/about"
+              class="link"
+              exact-active-class="dropdownElementActive"
+              @click="toggleMenu"
+              >About us</NuxtLink
+            >
+            <NuxtLink
+              to="/about/faq"
+              class="link"
+              exact-active-class="dropdownElementActive"
+              @click="toggleMenu"
+              >FAQ</NuxtLink
+            >
+          </div>
+        </div>
+        <NuxtLink
+          to="/people"
+          class="link navElement"
+          exact-active-class="linkActive"
+          @click="toggleMenu"
+          >People</NuxtLink
+        >
+        <NuxtLink
+          to="/projects"
+          class="link navElement"
+          exact-active-class="linkActive"
+          @click="toggleMenu"
+          >Projects</NuxtLink
+        >
+        <NuxtLink
+          to="/areas"
+          class="link navElement"
+          exact-active-class="linkActive"
+          @click="toggleMenu"
+          >Areas</NuxtLink
+        >
+        <NuxtLink
+          to="/contact"
+          class="link navElement"
+          exact-active-class="linkActive"
+          @click="toggleMenu"
+          >Contact us</NuxtLink
+        >
+      </div>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+  },
+  mounted() {
+    const body = document.querySelector("body");
+    body.addEventListener("click", (event) => {
+      if (event.target.closest("header") === null) {
+        this.showMenu = false;
+      }
+    });
+  },
+};
+</script>
 
 <style>
 header {
@@ -39,6 +99,54 @@ nav {
   gap: 30px;
 }
 
+.menu-items {
+  display: flex;
+  gap: 30px;
+}
+
+.close-menu {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
 .navElement {
   color: #181717;
   font-size: 1.25rem;
@@ -47,9 +155,82 @@ nav {
   font-weight: 700;
   line-height: normal;
 }
+
 .link {
   color: #181717;
   font-family: sans-serif;
   text-decoration: none;
+}
+
+.linkActive {
+  color: #fff;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff006b;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+  }
+
+  nav.show-menu {
+    transform: translateX(0);
+  }
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .navElement {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
 }
 </style>
