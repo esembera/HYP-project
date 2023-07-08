@@ -2,90 +2,103 @@
     Contact Page
 -->
 <template>
-    <main>
-        <main>
-            <p>
-                This are our contacts:
-                <ul>
-                    <li>E-mail: mail@shelter.it</li>
-                    <li>Tel: 053684864351</li>
-                </ul>
-            </p>
-            <form>
-                <div>
-                    <label for = "name">Name & Surname</label>
-                    <input type = "text" id = "name" placeholder = "Name & Surname">
-                </div>
-                <div>
-                    <label for = "mail">E-mail</label>
-                    <input type = "email" id = "mail" placeholder = "E-mail">
-                </div>
-                <div id = "message-div">
-                    <label for = "message">Message</label>
-                    <textarea id = "message" placeholder = "Write your message here"></textarea>  
-                </div>
-                <button>Send Message</button>
-            </form>
-        </main>
-    </main>
+  <div class="max-w-5xl md:mx-auto mt-20 flex justify-center items-center">
+    <div class="w-1/2 m-10">
+      <h1
+        class="text-9xl font-extrabold text-center"
+        style="font-family: ArchivoBlack"
+      >
+        Let's <br /><span class="image-after">TALK!</span>
+      </h1>
+      <p class="text-justify mt-10 font-sans text-lg">
+        We value open communication and are always eager to connect with
+        individuals and businesses who share our passion for innovation. Whether
+        you're seeking investment opportunities or looking to collaborate, we
+        invite you to get in touch with us.<br />
+        <span class="font-bold"
+          >Reach out to us via the contact form, and we'll respond
+          promptly.</span
+        >
+      </p>
+    </div>
+    <div class="w-1/2 m-10">
+      <form>
+        <div>
+          <label for="name">Name &amp; Surname</label>
+          <input type="text" id="name" placeholder="Name &amp; Surname" />
+        </div>
+        <div>
+          <label for="mail">E-mail</label>
+          <input type="email" id="mail" placeholder="E-mail" />
+        </div>
+        <div>
+          <label for="subject">I am... (entrepreneur/investor)</label>
+          <div class="select-wrapper">
+            <select id="subject">
+              <option value="" selected disabled>Select a subject</option>
+              <option value="enterpreneur">Entrepreneur</option>
+              <option value="investor">Investor</option>
+            </select>
+          </div>
+        </div>
+        <div id="message-div">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            placeholder="Write your message here"
+          ></textarea>
+        </div>
+        <button>Send</button>
+      </form>
+    </div>
+  </div>
 </template>
 
 <style>
-    main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    }
+form {
+  background-color: #ff006b;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
-    form {
-        width: 600px;
-        display: flex;
-        flex-direction: column;
-        padding: 15px;
-        border: 2px rgb(255, 102, 0) dashed;
-        border-radius: 5px;
-        row-gap: 20px;
-    }
+form div {
+  margin-bottom: 10px;
+}
 
-    form div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-    textarea {
-        width: 99%;
-        min-height: 5.1em;
-        resize: vertical;
-    }
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+  width: 100%;
+}
 
-    input {
-        width: 60%;
-    }
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 
-    label {
-        font-size: 13pt;
-        font-weight: bold;
-    }
-
-    #message-div {
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 650px) {
-        form div {
-            flex-direction: column;
-        }
-
-        input {
-            width: 100%;
-        }
-        
-        form {
-            width: 90%;
-            min-width: 400px;
-        }
-    }
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
 </style>

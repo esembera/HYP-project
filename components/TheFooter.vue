@@ -1,6 +1,5 @@
 <script setup>
 const activeMenuItem = useActiveMenuItem();
-console.log(activeMenuItem);
 </script>
 
 <template>
@@ -64,6 +63,20 @@ console.log(activeMenuItem);
             </div>
           </div>
         </nav>
+        <div class="additional-info">
+          <div class="info-row">
+            <span>info@zen.ventures</span>
+          </div>
+          <div class="info-row">
+            <span>+39 1234567890</span>
+          </div>
+          <div class="info-row">
+            <span>Milano, Viale Monza 106</span>
+          </div>
+          <div class="info-row">
+            <span>®2023</span>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -92,6 +105,24 @@ export default {
 </script>
 
 <style>
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: auto;
+  color: black;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+.info-row {
+  margin-bottom: 5px;
+}
 .rectangle {
   width: 350px;
   height: 100px;
@@ -154,5 +185,22 @@ footer {
   font-weight: 500;
   line-height: normal;
   margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .column {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>
