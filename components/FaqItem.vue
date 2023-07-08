@@ -13,7 +13,7 @@
           {{ answer }}
         </p>
         <div v-if="hasAreasBtn" class="w-11/12 text-right mb-20">
-          <NuxtLink to="/about/faq">
+          <NuxtLink to="/areas">
             <span class="text-2xl open-sans"
               >view <span class="font-bold">AREAS</span>&nbsp;<SvgArrow
                 class="inline mb-1"
