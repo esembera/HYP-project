@@ -15,7 +15,10 @@ const activeMenuItem = useActiveMenuItem();
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
-    <nav :class="{ 'show-menu': showMenu }">
+    <nav
+      :class="{ 'show-menu': showMenu }"
+      :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }"
+    >
       <div class="close-menu" @click="toggleMenu()">X</div>
       <div class="menu-items">
         <div class="dropdown" v-if="isDesktop">
