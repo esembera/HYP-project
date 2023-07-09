@@ -1,7 +1,7 @@
 <template>
   <header
     :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }"
-    v-show="reveal"
+    v-show="isDesktop"
   >
     <NuxtLink to="/" @click="activeMenuItem = 'home'">
       <SvgIcon />
@@ -120,14 +120,12 @@ export default {
     isDesktop() {
       if (process.client) {
         return window.innerWidth > 768; // Adjust the breakpoint as needed
+      } else {
+        return null;
       }
-      return true;
     },
   },
   mounted() {
-    this.$nextTick(() => {
-      this.reveal = true;
-    });
     const body = document.querySelector("body");
     body.addEventListener("click", (event) => {
       if (event.target.closest("header") === null) {
