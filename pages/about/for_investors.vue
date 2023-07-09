@@ -2,7 +2,7 @@
   <div class="md:container md:mx-auto">
     <div class="max-w-4xl md:mx-auto mt-20">
       <h1
-        class="text-8xl font-extrabold text-center"
+        class="text-6xl font-extrabold text-center md:text-8xl"
         style="font-family: ArchivoBlack"
       >
         What should you <span class="image-after">KNOW</span> about?
@@ -31,7 +31,7 @@
         For investors
       </NuxtLink>
     </div>
-    <div class="w-4/5 md:mx-auto">
+    <div class="w-4/5 mx-auto">
       <span class="text-4xl block mt-10" style="font-family: ArchivoBlack"
         >FOR INVESTORS</span
       >
@@ -49,7 +49,7 @@
     </div>
     <div class="w-11/12 text-right mb-20">
       <NuxtLink to="/about">
-        <span class="text-3xl open-sans"
+        <span class="md:text-3xl open-sans text-xl"
           ><SvgBackArrow class="inline" />&nbsp;previous
           <span class="font-bold">About us</span></span
         >
@@ -196,5 +196,10 @@ export default {
   text-decoration: none;
   color: black;
   border-radius: 50px;
+}
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px;
+  }
 }
 </style>

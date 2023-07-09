@@ -5,21 +5,26 @@
   <div class="md:container md:mx-auto">
     <div class="max-w-4xl md:mx-auto mt-20">
       <h1
-        class="text-8xl font-extrabold text-center"
+        class="text-6xl font-extrabold text-center md:text-8xl"
         style="font-family: ArchivoBlack"
       >
         We started with an <span class="image-after">IDEA</span> too.
       </h1>
     </div>
-    <div class="max-w-6xl md:mx-auto mt-20 flex justify-center items-center">
+    <div
+      class="max-w-6xl md:mx-auto mt-20 flex justify-center items-center md:flex-row flex-col-reverse"
+    >
       <div class="w-1/2 m-10">
         <img src="~/assets/img/supportingGraphics/graphic1.png" alt="idea" />
       </div>
-      <div class="w-1/2 m-10">
-        <h2 class="text-center text-5xl" style="font-family: ArchivoBlack">
+      <div class="w-1/2 md:m-10">
+        <h2
+          class="text-center md:text-5xl text-3xl"
+          style="font-family: ArchivoBlack"
+        >
           Our Philosophy
         </h2>
-        <p class="text-justify mt-10 font-sans text-lg">
+        <p class="text-justify mt-10 font-sans text-lg text-center">
           Stepping outside of the comfort zone. We aim to empower the next
           generation of entrepreneurs who are passionate about making a
           difference. We provide not only financial support but also mentorship,
@@ -30,9 +35,14 @@
         </p>
       </div>
     </div>
-    <div class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center">
-      <div class="w-1/2 m-10">
-        <h2 class="text-center text-5xl" style="font-family: ArchivoBlack">
+    <div
+      class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center md:flex-row flex-col"
+    >
+      <div class="w-1/2 md:m-10">
+        <h2
+          class="text-center md:text-5xl text-3xl"
+          style="font-family: ArchivoBlack"
+        >
           Our (hi)story
         </h2>
         <p class="text-justify mt-10 font-sans text-lg">
@@ -50,12 +60,17 @@
         <img src="~/assets/img/supportingGraphics/graphic2.png" alt="idea" />
       </div>
     </div>
-    <div class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center">
+    <div
+      class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center md:flex-row flex-col-reverse"
+    >
       <div class="w-1/2 m-10">
         <img src="~/assets/img/supportingGraphics/graphic3.png" alt="idea" />
       </div>
-      <div class="w-1/2 m-10">
-        <h2 class="text-center text-5xl" style="font-family: ArchivoBlack">
+      <div class="w-1/2 md:m-10">
+        <h2
+          class="text-center md:text-5xl text-3xl"
+          style="font-family: ArchivoBlack"
+        >
           Our Key Initiatives
         </h2>
         <ul class="text-justify mt-10 font-sans text-lg list-disc">
@@ -79,9 +94,9 @@
         </ul>
       </div>
     </div>
-    <div class="w-11/12 text-right mb-20">
+    <div class="w-11/12 text-right md:mb-20 mt-10 md:mt-0 mb-10">
       <NuxtLink to="/about/faq">
-        <span class="text-3xl open-sans"
+        <span class="md:text-3xl open-sans text-xl"
           >next <span class="font-bold">FAQ</span>&nbsp;<SvgArrow
             class="inline mb-2"
         /></span>

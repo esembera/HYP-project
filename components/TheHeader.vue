@@ -18,7 +18,7 @@ const activeMenuItem = useActiveMenuItem();
       <div class="bar"></div>
     </div>
     <nav :class="{ 'show-menu': showMenu }">
-      <div class="close-menu" @click="toggleMenu">X</div>
+      <div class="close-menu" @click="toggleMenu()">X</div>
       <div class="menu-items">
         <div class="dropdown">
           <span class="link navElement hover:cursor-pointer">About us</span>
@@ -27,14 +27,14 @@ const activeMenuItem = useActiveMenuItem();
               to="/about"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu, (activeMenuItem = 'about')"
+              @click="toggleMenu(), (activeMenuItem = 'about')"
               >About us</NuxtLink
             >
             <NuxtLink
               to="/about/faq"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu, (activeMenuItem = 'faq')"
+              @click="toggleMenu(), (activeMenuItem = 'faq')"
               >FAQ</NuxtLink
             >
           </div>
@@ -43,28 +43,28 @@ const activeMenuItem = useActiveMenuItem();
           to="/people"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu, (activeMenuItem = 'people')"
+          @click="toggleMenu(), (activeMenuItem = 'people')"
           >People</NuxtLink
         >
         <NuxtLink
           to="/projects"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu, (activeMenuItem = 'projects')"
+          @click="toggleMenu(), (activeMenuItem = 'projects')"
           >Projects</NuxtLink
         >
         <NuxtLink
           to="/areas"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu, (activeMenuItem = 'areas')"
+          @click="toggleMenu(), (activeMenuItem = 'areas')"
           >Areas</NuxtLink
         >
         <NuxtLink
           to="/contact"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu, (activeMenuItem = 'contact')"
+          @click="toggleMenu(), (activeMenuItem = 'contact')"
           >Contact us</NuxtLink
         >
       </div>
@@ -83,7 +83,7 @@ export default {
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
-      this.activeMenuItem = null;
+      // this.activeMenuItem = null;
     },
     getMenuItemColor(menuItem) {
       const colorMap = {
@@ -93,7 +93,7 @@ export default {
         areas: "#B3DC3D",
         contact: "#FF006B",
         about: "#FF006B",
-        faq: "#00ffff",
+        faq: "#FF006B",
       };
       return colorMap[menuItem] || "#ff006b"; // Default color for the header
     },

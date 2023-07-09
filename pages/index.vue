@@ -5,14 +5,14 @@
   <div class="md:container md:mx-auto">
     <div class="max-w-3xl md:mx-auto mt-20">
       <h1
-        class="text-8xl font-extrabold text-center"
+        class="md:text-8xl font-extrabold text-center text-6xl"
         style="font-family: ArchivoBlack"
       >
         Ready for your <span class="image-after">BOLD</span> ideas.
       </h1>
     </div>
     <div class="max-w-3xl md:mx-auto mt-20">
-      <p class="text-center text-xl md:mx-auto font-sans">
+      <p class="text-center md:text-xl md:mx-auto font-sans text-lg">
         We're the adrenaline junkies of the startup world: embracing the
         unexpected, flipping the script, and thriving on the thrill of bold
         ideas. Together with Mini, Calm, Kilo and 200 others , we've celebrated
@@ -20,7 +20,7 @@
       </p>
     </div>
     <div
-      class="text-center text-xl md:mx-auto font-bold mt-10"
+      class="text-center md:text-xl text-lg md:mx-auto font-bold mt-10"
       style="font-family: ArchivoBlack"
     >
       We can, indeed, do it all.
@@ -33,8 +33,12 @@
         <NuxtLink to="/contact"> Contact us </NuxtLink>
       </button>
     </div>
-    <div class="flex w-full justify-center mt-20 mb-10">
-      <div class="w-1/4 text-center colorPink h-80 m-1 hover:shadow-2xl">
+    <div
+      class="flex w-full justify-center mt-20 mb-10 md:flex-row flex-col mr-10"
+    >
+      <div
+        class="md:w-1/4 w-full text-center colorPink h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
+      >
         <NuxtLink to="/about">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
@@ -51,7 +55,9 @@
           </div>
         </NuxtLink>
       </div>
-      <div class="w-1/4 text-center colorBlue h-80 m-1 hover:shadow-2xl">
+      <div
+        class="md:w-1/4 w-full text-center colorBlue h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
+      >
         <NuxtLink to="/people">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
@@ -68,7 +74,9 @@
           </div>
         </NuxtLink>
       </div>
-      <div class="w-1/4 text-center colorGreen h-80 m-1 hover:shadow-2xl">
+      <div
+        class="md:w-1/4 w-full text-center colorGreen h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
+      >
         <NuxtLink to="/areas">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
@@ -86,39 +94,49 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="w-4/5 md:mx-auto">
+    <div class="w-4/5 mx-auto">
       <span class="text-4xl" style="font-family: ArchivoBlack"
         >RECENT INVESTMENTS</span
       >
-      <div class="text-left flex w-full mt-5 mb-5">
-        <div class="w-1/5 text-center colorPink h-auto m-1 hover:shadow-2xl">
+      <div class="text-left flex w-full mt-5 mb-5 md:flex-row flex-col">
+        <div
+          class="md:w-1/5 w-full text-center colorPink h-auto m-1 hover:shadow-2xl"
+        >
           <NuxtLink to="#">
             <img src="../assets/img/projects/calm.png" />
           </NuxtLink>
         </div>
-        <div class="w-1/5 text-center colorBlue h-auto m-1 hover:shadow-2xl">
+        <div
+          class="md:w-1/5 w-full text-center colorBlue h-auto m-1 hover:shadow-2xl"
+        >
           <NuxtLink to="#">
             <img src="../assets/img/projects/sara.png" />
           </NuxtLink>
         </div>
-        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <div
+          class="md:w-1/5 w-full text-center colorGreen h-auto m-1 hover:shadow-2xl"
+        >
           <NuxtLink to="#">
             <img src="../assets/img/projects/lovin.png" />
           </NuxtLink>
         </div>
-        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <div
+          class="md:w-1/5 w-full text-center colorGreen h-auto m-1 hover:shadow-2xl"
+        >
           <NuxtLink to="#">
             <img src="../assets/img/projects/mini.png" />
           </NuxtLink>
         </div>
-        <div class="w-1/5 text-center colorGreen h-auto m-1 hover:shadow-2xl">
+        <div
+          class="md:w-1/5 w-full text-center colorGreen h-auto m-1 hover:shadow-2xl"
+        >
           <NuxtLink to="#">
             <img src="../assets/img/projects/publicAnchor.jpg" />
           </NuxtLink>
         </div>
       </div>
       <NuxtLink to="/projects">
-        <span class="text-3xl open-sans"
+        <span class="md:text-3xl open-sans text-xl"
           >view <span class="font-bold">PROJECTS</span>&nbsp;<SvgArrow
             class="inline mb-2"
         /></span>
@@ -138,7 +156,7 @@
         />
       </template>
       <NuxtLink to="/about/faq">
-        <span class="text-3xl open-sans block mb-20"
+        <span class="md:text-3xl open-sans text-xl mb-20 block"
           >view <span class="font-bold">FAQ</span>&nbsp;
           <SvgArrow class="inline mb-2"
         /></span>

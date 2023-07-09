@@ -1,7 +1,7 @@
 <template>
   <div>
     <span
-      class="text-3xl block mt-10 open-sans hover:cursor-pointer"
+      class="md:text-3xl text-2xl block mt-10 open-sans hover:cursor-pointer"
       @click="toggleAnswer"
     >
       {{ question }}
@@ -9,10 +9,12 @@
     <BlackLine />
     <transition name="fade">
       <div v-show="showAnswer">
-        <p class="text-2xl mt-2 open-sans mb-10">
+        <p
+          class="md:text-2xl text-xl mt-2 open-sans mb-10 text-justify md:text-left"
+        >
           {{ answer }}
         </p>
-        <div v-if="hasAreasBtn" class="w-11/12 text-right mb-20">
+        <div v-if="hasAreasBtn" class="w-11/12 md:text-right text-center mb-20">
           <NuxtLink to="/areas">
             <span class="text-2xl open-sans"
               >view <span class="font-bold">AREAS</span>&nbsp;<SvgArrow
@@ -20,7 +22,10 @@
             /></span>
           </NuxtLink>
         </div>
-        <div v-if="hasContactUsBtn" class="w-11/12 text-right mb-20">
+        <div
+          v-if="hasContactUsBtn"
+          class="w-11/12 md:text-right text-center mb-20"
+        >
           <button
             class="colorPink text-black font-bold py-3 px-10 rounded-2xl hover:shadow-2xl"
             style="font-family: ArchivoBlack"
