@@ -1,5 +1,8 @@
 <template>
-  <header :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }">
+  <header
+    :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }"
+    v-show="reveal"
+  >
     <NuxtLink to="/" @click="activeMenuItem = 'home'">
       <SvgIcon />
     </NuxtLink>
@@ -115,13 +118,16 @@ export default {
   },
   computed: {
     isDesktop() {
-      if (process.browser) {
+      if (process.client) {
         return window.innerWidth > 768; // Adjust the breakpoint as needed
       }
       return true;
     },
   },
   mounted() {
+    this.$nextTick(() => {
+      this.reveal = true;
+    });
     const body = document.querySelector("body");
     body.addEventListener("click", (event) => {
       if (event.target.closest("header") === null) {
