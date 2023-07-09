@@ -118,6 +118,7 @@ export default {
       if (process.browser) {
         return window.innerWidth > 768; // Adjust the breakpoint as needed
       }
+      return true;
     },
   },
   mounted() {
