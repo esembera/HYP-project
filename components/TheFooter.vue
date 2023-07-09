@@ -96,7 +96,7 @@ export default {
         areas: "#B3DC3D",
         contact: "#FF006B",
         about: "#FF006B",
-        faq: "#00ffff",
+        faq: "#FF006B",
       };
       return colorMap[menuItem] || "#ff006b"; // Default color for the footer
     },
