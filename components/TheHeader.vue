@@ -35,7 +35,7 @@
             </NuxtLink>
           </div>
         </div>
-        <template v-if="!isDesktop">
+        <template v-if="isMobile">
           <NuxtLink
             to="/about"
             class="link navElement"
@@ -120,6 +120,13 @@ export default {
     isDesktop() {
       if (process.client) {
         return window.innerWidth > 768; // Adjust the breakpoint as needed
+      } else {
+        return null;
+      }
+    },
+    isMobile() {
+      if (process.client) {
+        return window.innerWidth < 768; // Adjust the breakpoint as needed
       } else {
         return null;
       }
