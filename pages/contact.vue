@@ -5,7 +5,7 @@
   <div
     class="max-w-5xl md:mx-auto mt-20 flex justify-center items-center md:flex-row flex-col"
   >
-    <div class="w-1/2 m-10">
+    <div class="md:w-1/2 w-9/12 m-10">
       <h1
         class="md:text-9xl font-extrabold text-center text-6xl text-4"
         style="font-family: ArchivoBlack"
@@ -23,7 +23,7 @@
         >
       </p>
     </div>
-    <div class="w-1/2 m-10">
+    <div class="md:w-1/2 w-9/12 m-10 md:mb-0 mb-20">
       <form>
         <div>
           <label for="name">Name &amp; Surname</label>
