@@ -44,22 +44,47 @@ const activeMenuItem = useActiveMenuItem();
               Explore
             </div>
             <div class="row option">
-              <NuxtLink to="/people" class="link">People</NuxtLink>
+              <NuxtLink
+                to="/people"
+                class="link"
+                @click="activeMenuItem = 'people'"
+                >People</NuxtLink
+              >
             </div>
             <div class="row option">
-              <NuxtLink to="/projects" class="link">Projects</NuxtLink>
+              <NuxtLink
+                to="/projects"
+                class="link"
+                @click="activeMenuItem = 'projects'"
+                >Projects</NuxtLink
+              >
             </div>
             <div class="row option">
-              <NuxtLink to="/areas" class="link">Areas</NuxtLink>
+              <NuxtLink
+                to="/areas"
+                class="link"
+                @click="activeMenuItem = 'areas'"
+                >Areas</NuxtLink
+              >
             </div>
           </div>
           <div class="column">
             <div class="row heading1" style="justify-content: center">Info</div>
             <div class="row option">
-              <NuxtLink to="/about" class="link">About us</NuxtLink>
+              <NuxtLink
+                to="/about"
+                class="link"
+                @click="activeMenuItem = 'about'"
+                >About us</NuxtLink
+              >
             </div>
             <div class="row option">
-              <NuxtLink to="/contact" class="link">Contact us</NuxtLink>
+              <NuxtLink
+                to="/contact"
+                class="link"
+                @click="activeMenuItem = 'contact'"
+                >Contact us</NuxtLink
+              >
             </div>
           </div>
         </nav>
