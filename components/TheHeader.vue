@@ -1,7 +1,7 @@
 <template>
   <header
     :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }"
-    v-show="isDesktop"
+    v-show="isDesktop || isMobile"
   >
     <NuxtLink to="/" @click="activeMenuItem = 'home'">
       <SvgIcon />
