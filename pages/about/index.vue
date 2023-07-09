@@ -18,10 +18,10 @@ const activeMenuItem = useActiveMenuItem();
     <div
       class="max-w-6xl md:mx-auto mt-20 flex justify-center items-center md:flex-row flex-col-reverse"
     >
-      <div class="w-1/2 m-10">
+      <div class="md:w-1/2 w-9/12 m-10">
         <img src="~/assets/img/supportingGraphics/graphic1.png" alt="idea" />
       </div>
-      <div class="w-1/2 md:m-10">
+      <div class="md:w-1/2 w-9/12 md:m-10">
         <h2
           class="text-center md:text-5xl text-3xl"
           style="font-family: ArchivoBlack"
@@ -42,7 +42,7 @@ const activeMenuItem = useActiveMenuItem();
     <div
       class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center md:flex-row flex-col"
     >
-      <div class="w-1/2 md:m-10">
+      <div class="md:w-1/2 w-9/12 md:m-10">
         <h2
           class="text-center md:text-5xl text-3xl"
           style="font-family: ArchivoBlack"
@@ -60,17 +60,17 @@ const activeMenuItem = useActiveMenuItem();
           hospitality, creative solutions, and sustainable tech sectors.
         </p>
       </div>
-      <div class="w-1/2 m-10">
+      <div class="md:w-1/2 w-9/12 m-10">
         <img src="~/assets/img/supportingGraphics/graphic2.png" alt="idea" />
       </div>
     </div>
     <div
       class="max-w-6xl md:mx-auto mt-10 flex justify-center items-center md:flex-row flex-col-reverse"
     >
-      <div class="w-1/2 m-10">
+      <div class="md:w-1/2 w-9/12 m-10">
         <img src="~/assets/img/supportingGraphics/graphic3.png" alt="idea" />
       </div>
-      <div class="w-1/2 md:m-10">
+      <div class="md:w-1/2 w-9/12 md:m-10">
         <h2
           class="text-center md:text-5xl text-3xl"
           style="font-family: ArchivoBlack"

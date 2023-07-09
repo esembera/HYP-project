@@ -151,11 +151,6 @@ export default {
 </script>
 
 <style>
-@media (max-width: 768px) {
-  .button {
-    font-size: 16px;
-  }
-}
 #buttonContainer {
   display: flex;
   flex-direction: row;
@@ -199,5 +194,10 @@ export default {
   text-decoration: none;
   color: black;
   border-radius: 50px;
+}
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px;
+  }
 }
 </style>

@@ -72,7 +72,7 @@ const activeMenuItem = useActiveMenuItem();
       </div>
     </div>
     <div id="linkContainers">
-      <div class="w-11/12 text-left md:mb-20 mt-10 md:mt-0 mb-10">
+      <div class="w-11/12 text-left md:mb-20 mt-10 md:mt-0 mb-10 ml-6">
         <NuxtLink to="/projects" @click="activeMenuItem = 'projects'">
           <span class="md:text-3xl open-sans text-xl"
             ><SvgBackArrow class="inline mr-1" />previous

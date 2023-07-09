@@ -408,16 +408,20 @@ export default {
     border-radius: 25px;
   }
 
+  .buttonProjects:last-child {
+    font-size: 12px;
+  }
+
   #lastImage {
     font-size: 20px;
   }
 
   #contactButton {
     font-size: 20px;
-    width: 200px;
-    height: 70px;
+    width: 180px;
+    height: 50px;
     border-radius: 25px;
-    line-height: 70px;
+    line-height: 50px;
   }
 }
 </style>
