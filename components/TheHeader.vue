@@ -1,87 +1,72 @@
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
 <template>
   <header :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }">
-    <NuxtLink to="/" @click="activeMenuItem = 'home'">
-      <SvgIcon />
-    </NuxtLink>
+    <NuxtLink
+      to="/"
+      @click="
+        {
+          activeMenuItem = 'home';
+        }
+      "
+      ><SvgIcon
+    /></NuxtLink>
     <div class="burger-menu" @click="toggleMenu">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
     <nav :class="{ 'show-menu': showMenu }">
-      <div class="close-menu" @click="toggleMenu()">X</div>
+      <div class="close-menu" @click="toggleMenu">X</div>
       <div class="menu-items">
-        <div class="dropdown" v-if="isDesktop">
+        <div class="dropdown">
           <span class="link navElement hover:cursor-pointer">About us</span>
           <div class="dropdown-content">
             <NuxtLink
               to="/about"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu(), (activeMenuItem = 'about')"
+              @click="toggleMenu, (activeMenuItem = 'about')"
+              >About us</NuxtLink
             >
-              About us
-            </NuxtLink>
             <NuxtLink
               to="/about/faq"
               class="link"
               exact-active-class="dropdownElementActive"
-              @click="toggleMenu(), (activeMenuItem = 'faq')"
+              @click="toggleMenu, (activeMenuItem = 'faq')"
+              >FAQ</NuxtLink
             >
-              FAQ
-            </NuxtLink>
           </div>
         </div>
-        <template v-if="!isDesktop">
-          <NuxtLink
-            to="/about"
-            class="link navElement"
-            exact-active-class="linkActive"
-            @click="toggleMenu(), (activeMenuItem = 'about')"
-          >
-            About us
-          </NuxtLink>
-          <NuxtLink
-            to="/about/faq"
-            class="link navElement"
-            exact-active-class="linkActive"
-            @click="toggleMenu(), (activeMenuItem = 'faq')"
-          >
-            FAQ
-          </NuxtLink>
-        </template>
         <NuxtLink
           to="/people"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu(), (activeMenuItem = 'people')"
+          @click="toggleMenu, (activeMenuItem = 'people')"
+          >People</NuxtLink
         >
-          People
-        </NuxtLink>
         <NuxtLink
           to="/projects"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu(), (activeMenuItem = 'projects')"
+          @click="toggleMenu, (activeMenuItem = 'projects')"
+          >Projects</NuxtLink
         >
-          Projects
-        </NuxtLink>
         <NuxtLink
           to="/areas"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu(), (activeMenuItem = 'areas')"
+          @click="toggleMenu, (activeMenuItem = 'areas')"
+          >Areas</NuxtLink
         >
-          Areas
-        </NuxtLink>
         <NuxtLink
           to="/contact"
           class="link navElement"
           exact-active-class="linkActive"
-          @click="toggleMenu(), (activeMenuItem = 'contact')"
+          @click="toggleMenu, (activeMenuItem = 'contact')"
+          >Contact us</NuxtLink
         >
-          Contact us
-        </NuxtLink>
       </div>
     </nav>
   </header>
@@ -98,7 +83,7 @@ export default {
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
-      // this.activeMenuItem = null;
+      this.activeMenuItem = null;
     },
     getMenuItemColor(menuItem) {
       const colorMap = {
@@ -108,14 +93,9 @@ export default {
         areas: "#B3DC3D",
         contact: "#FF006B",
         about: "#FF006B",
-        faq: "#FF006B",
+        faq: "#00ffff",
       };
       return colorMap[menuItem] || "#ff006b"; // Default color for the header
-    },
-  },
-  computed: {
-    isDesktop() {
-      return window.innerWidth > 768; // Adjust the breakpoint as needed
     },
   },
   mounted() {
@@ -256,6 +236,15 @@ nav {
     transform: translateX(0);
   }
 
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+  }
+
   .close-menu {
     display: block;
     position: absolute;
@@ -266,20 +255,6 @@ nav {
     cursor: pointer;
   }
 
-  .dropdown {
-    display: none; /* Hide dropdown on mobile */
-  }
-
-  .menu-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    margin-top: 20px;
-  }
-
-  /* Adjust the styling for mobile view */
   .navElement {
     font-size: 1.5rem;
     margin: 10px 0;
