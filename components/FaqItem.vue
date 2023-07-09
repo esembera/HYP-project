@@ -1,3 +1,7 @@
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
+
 <template>
   <div>
     <span
@@ -15,7 +19,7 @@
           {{ answer }}
         </p>
         <div v-if="hasAreasBtn" class="w-11/12 md:text-right text-center mb-20">
-          <NuxtLink to="/areas">
+          <NuxtLink to="/areas" @click="activeMenuItem = 'areas'">
             <span class="text-2xl open-sans"
               >view <span class="font-bold">AREAS</span>&nbsp;<SvgArrow
                 class="inline mb-1"
@@ -30,7 +34,9 @@
             class="colorPink text-black font-bold py-3 px-10 rounded-2xl hover:shadow-2xl"
             style="font-family: ArchivoBlack"
           >
-            <NuxtLink to="/contact"> Contact us </NuxtLink>
+            <NuxtLink to="/contact" @click="activeMenuItem = 'contact'">
+              Contact us
+            </NuxtLink>
           </button>
         </div>
       </div>

@@ -1,6 +1,10 @@
 <!--
     Home page
 -->
+
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
 <template>
   <div class="md:container md:mx-auto">
     <div class="max-w-3xl md:mx-auto mt-20">
@@ -30,7 +34,9 @@
         class="colorPink text-black font-bold py-2 px-8 rounded-2xl mt-5 hover:shadow-2xl"
         style="font-family: ArchivoBlack"
       >
-        <NuxtLink to="/contact"> Contact us </NuxtLink>
+        <NuxtLink to="/contact" @click="activeMenuItem = 'contact'">
+          Contact us
+        </NuxtLink>
       </button>
     </div>
     <div
@@ -39,7 +45,7 @@
       <div
         class="md:w-1/4 w-full text-center colorPink h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
       >
-        <NuxtLink to="/about">
+        <NuxtLink to="/about" @click="activeMenuItem = 'about'">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
             style="font-family: ArchivoBlack"
@@ -58,7 +64,7 @@
       <div
         class="md:w-1/4 w-full text-center colorBlue h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
       >
-        <NuxtLink to="/people">
+        <NuxtLink to="/people" @click="activeMenuItem = 'people'">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
             style="font-family: ArchivoBlack"
@@ -77,7 +83,7 @@
       <div
         class="md:w-1/4 w-full text-center colorGreen h-80 md:m-1 mt-2 md:mt-0 hover:shadow-2xl"
       >
-        <NuxtLink to="/areas">
+        <NuxtLink to="/areas" @click="activeMenuItem = 'areas'">
           <div
             class="w-full h-full text-6xl text-left pl-5 pt-10"
             style="font-family: ArchivoBlack"
@@ -135,7 +141,7 @@
           </NuxtLink>
         </div>
       </div>
-      <NuxtLink to="/projects">
+      <NuxtLink to="/projects" @click="activeMenuItem = 'projects'">
         <span class="md:text-3xl open-sans text-xl"
           >view <span class="font-bold">PROJECTS</span>&nbsp;<SvgArrow
             class="inline mb-2"
@@ -155,7 +161,7 @@
           :hasAreasBtn="question.hasAreasBtn"
         />
       </template>
-      <NuxtLink to="/about/faq">
+      <NuxtLink to="/about/faq" @click="activeMenuItem = 'faq'">
         <span class="md:text-3xl open-sans text-xl mb-20 block"
           >view <span class="font-bold">FAQ</span>&nbsp;
           <SvgArrow class="inline mb-2"

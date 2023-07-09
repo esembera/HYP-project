@@ -1,3 +1,7 @@
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
+
 <template>
   <header
     :style="{ backgroundColor: getMenuItemColor(activeMenuItem) }"

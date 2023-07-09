@@ -1,6 +1,10 @@
 <!--
     About us page
 -->
+
+<script setup>
+const activeMenuItem = useActiveMenuItem();
+</script>
 <template>
   <div class="md:container md:mx-auto">
     <div class="max-w-4xl md:mx-auto mt-20">
@@ -95,7 +99,7 @@
       </div>
     </div>
     <div class="w-11/12 text-right md:mb-20 mt-10 md:mt-0 mb-10">
-      <NuxtLink to="/about/faq">
+      <NuxtLink to="/about/faq" @click="activeMenuItem = 'faq'">
         <span class="md:text-3xl open-sans text-xl"
           >next <span class="font-bold">FAQ</span>&nbsp;<SvgArrow
             class="inline mb-2"

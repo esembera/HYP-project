@@ -21,6 +21,14 @@ body {
   background-position: bottom;
 }
 
+.image-after-blue {
+  content: "";
+  background-image: url("../img/people/color.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
 .colorPink {
   background-color: #ff006b;
 }
