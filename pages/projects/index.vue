@@ -251,6 +251,7 @@ export default {
     height: 50px;
     border-radius: 25px;
     line-height: 50px;
+    margin: 0 auto;
   }
 }
 </style>
