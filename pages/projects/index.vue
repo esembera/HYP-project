@@ -298,6 +298,7 @@ export default {
         Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-align: center;
     line-height: 62px;
+    cursor: pointer;
 }
 
 .buttonActiveProjects {

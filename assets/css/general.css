@@ -37,6 +37,14 @@ body {
   background-position: bottom;
 }
 
+.image-after-green {
+  content: "";
+  background-image: url("../img/areas/color.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
 .colorPink {
   background-color: #ff006b;
 }
