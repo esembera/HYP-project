@@ -1,200 +1,280 @@
 <template>
-    <div class="modal-overlay" @click="$emit('close-modal')" v-if="localProject !== null">
-        <div class="modal" @click.stop>
-            <div class="close" @click="$emit('close-modal')">
-                <img class="close-img" src="~/assets/img/projects/close_dialog.png" alt="" />
-            </div>
-            <div class="dialogContainer">
-                <div class="dialogColumn">
-                    <div id="projectName">
-                        {{ localProject.name }}
-                    </div>
-                    <div id="projectDescription">
-                        {{ localProject.description }}
-                    </div>
-                </div>
-                <div class="dialogColumn">
-                    <div class="propertyName">AREA</div>
-                    <div class="propertyValue">{{ getAreaFullName(localProject.area) }}</div>
-                    <div class="propertyName">INDUSTRIES</div>
-                    <div class="propertyValue" v-for="i in localProject.industries" :key="i">{{ i }}</div>
-                    <div class="propertyName">MILESTONES</div>
-                    <div class="propertyValue" v-for="m in localProject.milestones" :key="m">{{ m }}</div>
-                    <div class="propertyName">FOUNDERS</div>
-                    <div class="propertyValue" v-for="f in localProject.founders" :key="f">{{ f }}</div>
-                    <div class="propertyName">SUPERVISOR</div>
-                    <div class="propertyValue">{{ localProject.supervisor }}</div>
-                </div>
-            </div>
-            <div class="dialogContainer">
-                <div class="dialogColumn">
-                    <span class="previous" @click="previousProject">
-                        PREVIOUS&nbsp;&nbsp;
-                        <SvgBackArrow class="inline mr-1" />
-                    </span>
-                </div>
-                <div class="dialogColumn">
-                    <span class="next" @click="nextProject">
-                        <SvgArrow class="inline mr-1" />
-                        &nbsp;&nbsp;NEXT
-                    </span>
-                </div>
-            </div>
-
-            <img :src="`/img/projects/black and white/${project.black_white_img}`"
-                style="position: absolute; bottom: 0; right: 0; width: 250px;" />
+  <div
+    class="modal-overlay"
+    @click="$emit('close-modal')"
+    v-if="localProject !== null"
+  >
+    <div class="modal" @click.stop>
+      <div class="close" @click="$emit('close-modal')">
+        <img
+          class="close-img"
+          src="~/assets/img/projects/close_dialog.png"
+          alt=""
+        />
+      </div>
+      <div class="dialogContainer">
+        <div class="dialogColumn">
+          <div id="projectName">
+            {{ localProject.name }}
+          </div>
+          <div id="projectDescription">
+            {{ localProject.description }}
+          </div>
         </div>
+        <div class="dialogColumn">
+          <div class="propertyName">AREA</div>
+          <div class="propertyValue">
+            {{ getAreaFullName(localProject.area) }}
+          </div>
+          <div class="propertyName">INDUSTRIES</div>
+          <div
+            class="propertyValue"
+            v-for="i in localProject.industries"
+            :key="i"
+          >
+            {{ i }}
+          </div>
+          <div class="propertyName">MILESTONES</div>
+          <div
+            class="propertyValue"
+            v-for="m in localProject.milestones"
+            :key="m"
+          >
+            {{ m }}
+          </div>
+          <div class="propertyName">FOUNDERS</div>
+          <div
+            class="propertyValue"
+            v-for="f in localProject.founders"
+            :key="f"
+          >
+            {{ f }}
+          </div>
+          <div class="propertyName">SUPERVISOR</div>
+          <div class="propertyValue">{{ localProject.supervisor }}</div>
+        </div>
+      </div>
+      <img
+        :src="`/img/projects/black and white/${localProject.black_white_img}`"
+        class="modalPicture"
+      />
+      <div class="dialogContainer">
+        <div class="dialogColumn">
+          <span class="previous" @click="previousProject">
+            PREVIOUS&nbsp;&nbsp;
+            <SvgBackArrow class="inline mr-1" />
+          </span>
+        </div>
+        <div class="dialogColumn">
+          <span class="next" @click="nextProject">
+            <SvgArrow class="inline mr-1" />
+            &nbsp;&nbsp;NEXT
+          </span>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        project: {
-            type: Object,
-            required: true,
-        },
-        projects: {
-            type: Array,
-            required: true,
-        },
+  props: {
+    project: {
+      type: Object,
+      required: true,
     },
-    data() {
-        return {
-            localProject: null,
-        };
+    projects: {
+      type: Array,
+      required: true,
     },
-    watch: {
-        project(newVal) {
-            this.localProject = newVal;
-        },
+  },
+  data() {
+    return {
+      localProject: null,
+    };
+  },
+  watch: {
+    project(newVal) {
+      this.localProject = newVal;
     },
-    methods: {
-        getAreaFullName(area) {
-            switch (area) {
-                case "hospitality":
-                    return "Hospitality";
-                case "technology":
-                    return "Technology & Inovation";
-                case "creative":
-                    return "Creative Solutions";
-            }
-        },
-        previousProject() {
-            let index;
-            for (let i = 0; i < this.projects.length; i++) {
-                if (this.localProject.id == this.projects[i].id) {
-                    index = i;
-                    break;
-                }
-            }
-            this.localProject = this.projects[index != 0 ? index - 1 : this.projects.length - 1];
-        },
-        nextProject() {
-            let index;
-            for (let i = 0; i < this.projects.length; i++) {
-                if (this.localProject.id == this.projects[i].id) {
-                    index = i;
-                    break;
-                }
-            }
-            this.localProject = this.projects[(index + 1) % this.projects.length];
+  },
+  methods: {
+    getAreaFullName(area) {
+      switch (area) {
+        case "hospitality":
+          return "Hospitality";
+        case "technology":
+          return "Technology & Inovation";
+        case "creative":
+          return "Creative Solutions";
+      }
+    },
+    previousProject() {
+      let index;
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.localProject.id == this.projects[i].id) {
+          index = i;
+          break;
         }
-    }
+      }
+      this.localProject =
+        this.projects[index != 0 ? index - 1 : this.projects.length - 1];
+    },
+    nextProject() {
+      let index;
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.localProject.id == this.projects[i].id) {
+          index = i;
+          break;
+        }
+      }
+      this.localProject = this.projects[(index + 1) % this.projects.length];
+    },
+  },
 };
 </script>
 
 <style scoped>
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000da;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000da;
 }
 
 .modal {
-    background-color: #A582FF;
-    width: 70%;
-    height: 666px;
-    border-radius: 50px;
-    padding: 15px;
-    position: relative;
+  background-color: #a582ff;
+  width: 70%;
+  height: 666px;
+  border-radius: 50px;
+  padding: 15px;
+  position: relative;
 }
 
 .close {
-    float: right;
-    cursor: pointer;
-    width: 51px;
-    height: 51px;
+  float: right;
+  cursor: pointer;
+  width: 51px;
+  height: 51px;
 }
 
 .dialogContainer {
-    display: flex;
+  display: flex;
 }
 
 .dialogColumn {
-    margin-top: 5%;
-    flex: 1;
+  margin-top: 5%;
+  flex: 1;
 }
 
 #projectName {
-    font-size: 50px;
-    font-weight: 1000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    text-align: center;
-    color: #181717;
+  font-size: 50px;
+  font-weight: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: #181717;
 }
 
 #projectDescription {
-    font-size: 18px;
-    text-align: justify;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin: 7%;
-    color: #181717;
+  font-size: 18px;
+  text-align: justify;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 7%;
+  color: #181717;
 }
 
 .propertyName {
-    font-size: 18px;
-    font-weight: 1000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    color: #181717;
-    margin-left: 25%;
-    margin-top: 5%;
+  font-size: 18px;
+  font-weight: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #181717;
+  margin-left: 25%;
+  margin-top: 5%;
 }
 
 .propertyValue {
-    color: #181717;
-    margin-left: 25%;
-    font-size: 18px;
-    font-family: sans-serif;
+  color: #181717;
+  margin-left: 25%;
+  font-size: 18px;
+  font-family: sans-serif;
 }
 
 .previous {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-weight: 1000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin-right: 5%;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-right: 5%;
+  cursor: pointer;
 }
 
 .next {
-    display: flex;
-    align-items: center;
-    font-weight: 1000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin-left: 5%;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-left: 5%;
+  cursor: pointer;
+}
+
+.modalPicture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 250px;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    height: 75%;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+  }
+  .dialogContainer {
+    flex-direction: column;
+  }
+  .dialogColumn {
+    margin-top: 0;
+    margin-bottom: 2%;
+    text-align: center;
+  }
+  #projectName {
+    font-size: 30px;
+  }
+  .propertyName {
+    font-size: 12px;
+    margin-left: 0;
+  }
+  .propertyValue {
+    margin-left: 0;
+  }
+  .previous {
+    justify-content: center;
+    margin-right: 0;
+  }
+  .next {
+    justify-content: center;
+    margin-left: 0;
+  }
+  .modalPicture {
+    position: relative;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .close {
+    display: none;
+  }
 }
 </style>

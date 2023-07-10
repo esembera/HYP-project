@@ -6,113 +6,220 @@
       </h1>
     </div>
     <div class="max-w-4xl md:mx-auto mt-20">
-      <p class="text-center md:text-xl md:mx-auto font-sans text-lg md:text-justify">
-        Discover the areas we excell at the most! From hospitality to sustainable tech, and creative practices, our
-        portfolio covers a wide range of industries. We support cool ideas and invest in and partner with businesses that
-        are shaping the future.
+      <p
+        class="text-center md:text-xl md:mx-auto font-sans text-lg md:text-justify"
+      >
+        Discover the areas we excell at the most! From hospitality to
+        sustainable tech, and creative practices, our portfolio covers a wide
+        range of industries. We support cool ideas and invest in and partner
+        with businesses that are shaping the future.
       </p>
     </div>
     <div id="buttonContainer" class="mt-20">
-      <div class="buttonProjects" @click="activeButton = 'all'" :class="{ 'green': activeButton == 'all' }">
+      <div
+        class="buttonProjects"
+        @click="activeButton = 'all'"
+        :class="{ green: activeButton == 'all' }"
+      >
         All
       </div>
-      <div class="buttonProjects" @click="clickHospitality" :class="{ 'green': activeButton == 'hospitality' }">
+      <div
+        class="buttonProjects"
+        @click="clickHospitality"
+        :class="{ green: activeButton == 'hospitality' }"
+      >
         Hospitality
       </div>
-      <div class="buttonProjects" @click="clickCreative" :class="{ 'green': activeButton == 'creative' }">
+      <div
+        class="buttonProjects"
+        @click="clickCreative"
+        :class="{ green: activeButton == 'creative' }"
+      >
         Creative Solutions
       </div>
-      <div class="buttonProjects" @click="clickTechnology" :class="{ 'green': activeButton == 'technology' }">
+      <div
+        class="buttonProjects"
+        @click="clickTechnology"
+        :class="{ green: activeButton == 'technology' }"
+      >
         Tech & Innovation
       </div>
     </div>
-    <div class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10" style="font-family: ArchiveBlack"
-      @click="hospitalityActive = !hospitalityActive" v-if="activeButton == 'all' || activeButton == 'hospitality'">
+    <div
+      class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
+      style="font-family: ArchiveBlack"
+      @click="hospitalityActive = !hospitalityActive"
+      v-if="activeButton == 'all' || activeButton == 'hospitality'"
+    >
       HOSPITALITY
     </div>
-    <hr v-if="activeButton == 'all' || activeButton == 'hospitality'" />
-    <div style="display: flex; flex-direction: row;"
-      v-if="hospitalityActive && (activeButton == 'all' || activeButton == 'hospitality')">
-      <div class="areaDescription">Experience the power of investment in the hospitality sector,
-        where we curate
-        exceptional destinations that
-        redefine luxury and elevate guest experiences. Our portfolio includes a collection of world-class hotels, resorts,
-        and dining establishments that have not only gained industry recognition but also demonstrated impressive
-        financial
-        growth. With our strategic investments and industry expertise, we empower hospitality ventures to flourish,
-        delivering unparalleled guest satisfaction, driving revenue growth, and creating value for our investors.
+    <hr
+      v-if="activeButton == 'all' || activeButton == 'hospitality'"
+      class="md:mb-20 mb-10"
+    />
+    <div
+      class="flex md:flex-row flex-col md:mb-20"
+      v-if="
+        hospitalityActive &&
+        (activeButton == 'all' || activeButton == 'hospitality')
+      "
+    >
+      <div
+        class="text-center md:text-xl font-sans text-lg md:text-justify md:ml-10 mb-10 md:mb-0"
+      >
+        Experience the power of investment in the hospitality sector, where we
+        curate exceptional destinations that redefine luxury and elevate guest
+        experiences. Our portfolio includes a collection of world-class hotels,
+        resorts, and dining establishments that have not only gained industry
+        recognition but also demonstrated impressive financial growth. With our
+        strategic investments and industry expertise, we empower hospitality
+        ventures to flourish, delivering unparalleled guest satisfaction,
+        driving revenue growth, and creating value for our investors.
       </div>
       <div>
-        <div class="grid md:grid-cols-4 mt-20 mb-20 md:gap-4 md:ml-28 md:mr-28 gap-8 ml-4 mr-4 grid-cols-2">
-          <div class="relative flex justify-center" v-for="project in getProjectsByArea('hospitality')" :key="project.id"
-            @mouseover="setHoveredItem(project)" @mouseleave="clearHoveredItem">
+        <div
+          class="grid md:grid-cols-4 md:mr-10 md:ml-10 md:gap-4 gap-8 ml-4 mr-4 grid-cols-2"
+        >
+          <div
+            class="relative flex justify-center"
+            v-for="project in getProjectsByArea('hospitality')"
+            :key="project.id"
+            @mouseover="setHoveredItem(project)"
+            @mouseleave="clearHoveredItem"
+          >
             <img class="w-full" :src="`/img/projects/${project.image}`" />
-            <div class="detailsButton" v-if="project.id == hoveredProject" @click="showModal = true">
+            <div
+              class="detailsButton"
+              v-if="project.id == hoveredProject"
+              @click="showModal = true"
+            >
               Details
             </div>
           </div>
         </div>
         <br /><br />
-        <b class="text-xl">Check out our best hospitality projects!</b>
+        <p class="md:text-xl font-bold text-center text-lg">
+          Check out our best hospitality projects!
+        </p>
       </div>
     </div>
-    <div class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10" style="font-family: ArchiveBlack"
-      @click="creativeActive = !creativeActive" v-if="activeButton == 'all' || activeButton == 'creative'">
+    <div
+      class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
+      style="font-family: ArchiveBlack"
+      @click="creativeActive = !creativeActive"
+      v-if="activeButton == 'all' || activeButton == 'creative'"
+    >
       CREATIVE SOLUTIONS
     </div>
-    <hr v-if="activeButton == 'all' || activeButton == 'creative'" />
-    <div style="display: flex; flex-direction: row;"
-      v-if="creativeActive && (activeButton == 'all' || activeButton == 'creative')">
-      <div class="areaDescription">Experience the power of investment in the hospitality sector,
-        where we curate
-        exceptional destinations that
-        redefine luxury and elevate guest experiences. Our portfolio includes a collection of world-class hotels, resorts,
-        and dining establishments that have not only gained industry recognition but also demonstrated impressive
-        financial
-        growth. With our strategic investments and industry expertise, we empower hospitality ventures to flourish,
-        delivering unparalleled guest satisfaction, driving revenue growth, and creating value for our investors.
+    <hr
+      v-if="activeButton == 'all' || activeButton == 'creative'"
+      class="md:mb-20 mb-10"
+    />
+    <div
+      class="flex md:flex-row flex-col mb-20"
+      v-if="
+        creativeActive && (activeButton == 'all' || activeButton == 'creative')
+      "
+    >
+      <div
+        class="text-center md:text-xl font-sans text-lg md:text-justify md:ml-10 mb-10 md:mb-0"
+      >
+        Experience the power of investment in the hospitality sector, where we
+        curate exceptional destinations that redefine luxury and elevate guest
+        experiences. Our portfolio includes a collection of world-class hotels,
+        resorts, and dining establishments that have not only gained industry
+        recognition but also demonstrated impressive financial growth. With our
+        strategic investments and industry expertise, we empower hospitality
+        ventures to flourish, delivering unparalleled guest satisfaction,
+        driving revenue growth, and creating value for our investors.
         <br /><br />
-        <b class="text-xl">Check out our best creative solutions projects!</b>
+        <p class="md:text-xl font-bold text-center md:text-left text-lg">
+          Check out our best creative solutions projects!
+        </p>
       </div>
-      <div class="grid md:grid-cols-4 mt-20 mb-20 md:gap-4 md:ml-28 md:mr-28 gap-8 ml-4 mr-4 grid-cols-2">
-        <div class="relative flex justify-center" v-for="project in getProjectsByArea('creative')" :key="project.id"
-          @mouseover="setHoveredItem(project.id)" @mouseleave="clearHoveredItem">
+      <div
+        class="grid md:grid-cols-4 mb-20 md:mr-10 md:ml-10 md:gap-4 gap-8 ml-4 mr-4 grid-cols-2"
+      >
+        <div
+          class="relative flex justify-center"
+          v-for="project in getProjectsByArea('creative')"
+          :key="project.id"
+          @mouseover="setHoveredItem(project)"
+          @mouseleave="clearHoveredItem"
+        >
           <img class="w-full" :src="`/img/projects/${project.image}`" />
-          <div class="detailsButton" v-if="project == hoveredProject" @click="showModal = true">
+          <div
+            class="detailsButton"
+            v-if="project.id == hoveredProject"
+            @click="showModal = true"
+          >
             Details
           </div>
         </div>
       </div>
     </div>
-    <div class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10" style="font-family: ArchiveBlack"
-      @click="technologyActive = !technologyActive" v-if="activeButton == 'all' || activeButton == 'technology'">
+    <div
+      class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
+      style="font-family: ArchiveBlack"
+      @click="technologyActive = !technologyActive"
+      v-if="activeButton == 'all' || activeButton == 'technology'"
+    >
       TECHNOLOGY & INOVATION
     </div>
-    <hr v-if="activeButton == 'all' || activeButton == 'technology'" />
-    <div style="display: flex; flex-direction: row;"
-      v-if="technologyActive && (activeButton == 'all' || activeButton == 'technology')">
-      <div class="areaDescription">Experience the power of investment in the hospitality sector,
-        where we curate
-        exceptional destinations that
-        redefine luxury and elevate guest experiences. Our portfolio includes a collection of world-class hotels, resorts,
-        and dining establishments that have not only gained industry recognition but also demonstrated impressive
-        financial
-        growth. With our strategic investments and industry expertise, we empower hospitality ventures to flourish,
-        delivering unparalleled guest satisfaction, driving revenue growth, and creating value for our investors.
+    <hr
+      v-if="activeButton == 'all' || activeButton == 'technology'"
+      class="md:mb-20 mb-10"
+    />
+    <div
+      class="flex md:flex-row flex-col mb-20"
+      v-if="
+        technologyActive &&
+        (activeButton == 'all' || activeButton == 'technology')
+      "
+    >
+      <div
+        class="text-center md:text-xl font-sans text-lg md:text-justify md:ml-10 mb-10 md:mb-0"
+      >
+        Experience the power of investment in the hospitality sector, where we
+        curate exceptional destinations that redefine luxury and elevate guest
+        experiences. Our portfolio includes a collection of world-class hotels,
+        resorts, and dining establishments that have not only gained industry
+        recognition but also demonstrated impressive financial growth. With our
+        strategic investments and industry expertise, we empower hospitality
+        ventures to flourish, delivering unparalleled guest satisfaction,
+        driving revenue growth, and creating value for our investors.
         <br /><br />
-        <b class="text-xl">Check out our best technology projects!</b>
+        <p class="md:text-xl font-bold md:text-left text-center text-lg">
+          Check out our best technology projects!
+        </p>
       </div>
-      <div class="grid md:grid-cols-4 mt-20 mb-20 md:gap-4 md:ml-28 md:mr-28 gap-8 ml-4 mr-4 grid-cols-2">
-        <div class="relative flex justify-center" v-for="project in getProjectsByArea('technology')" :key="project.id"
-          @mouseover="setHoveredItem(project)" @mouseleave="clearHoveredItem">
+      <div
+        class="grid md:grid-cols-4 mb-20 md:mr-10 md:ml-10 md:gap-4 gap-8 ml-4 mr-4 grid-cols-2"
+      >
+        <div
+          class="relative flex justify-center"
+          v-for="project in getProjectsByArea('technology')"
+          :key="project.id"
+          @mouseover="setHoveredItem(project)"
+          @mouseleave="clearHoveredItem"
+        >
           <img class="w-full" :src="`/img/projects/${project.image}`" />
-          <div class="detailsButton" v-if="project.id == hoveredProject" @click="showModal = true">
+          <div
+            class="detailsButton"
+            v-if="project.id == hoveredProject"
+            @click="showModal = true"
+          >
             Details
           </div>
         </div>
       </div>
     </div>
-    <ProjectDetails v-show="showModal" @close-modal="showModal = false;" :project="childParameter" :projects="projects" />
+    <ProjectDetails
+      v-show="showModal"
+      @close-modal="showModal = false"
+      :project="childParameter"
+      :projects="projects"
+    />
   </div>
 </template>
 
@@ -323,7 +430,7 @@ export default {
       technologyActive: false,
       showModal: false,
       childParameter: null,
-      activeButton: 'all'
+      activeButton: "all",
     };
   },
   methods: {
@@ -342,20 +449,20 @@ export default {
       return typeProjects;
     },
     clickHospitality() {
-      this.activeButton = 'hospitality';
+      this.activeButton = "hospitality";
       this.hospitalityActive = true;
       console.log(this.activeButton);
     },
     clickCreative() {
-      this.activeButton = 'creative';
+      this.activeButton = "creative";
       this.creativeActive = true;
       console.log(this.activeButton);
     },
     clickTechnology() {
-      this.activeButton = 'technology';
+      this.activeButton = "technology";
       this.technologyActive = true;
       console.log(this.activeButton);
-    }
+    },
   },
 };
 </script>
@@ -371,14 +478,7 @@ hr {
 }
 
 .green {
-  background-color: #B3DC3D !important;
-}
-
-.areaDescription {
-  font-size: 20px;
-  text-align: justify;
-  font-family: sans-serif;
-  margin-left: 5%;
-  margin-top: 5%;
+  background-color: #b3dc3d !important;
+  font-weight: bold;
 }
 </style>

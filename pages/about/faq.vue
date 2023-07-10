@@ -196,8 +196,27 @@ export default {
   border-radius: 50px;
 }
 @media (max-width: 768px) {
+  #buttonContainer {
+    flex-direction: column;
+  }
   .button {
     font-size: 16px;
+    text-overflow: clip;
+    border-radius: 25px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  #lastImage {
+    font-size: 20px;
+  }
+
+  #contactButton {
+    font-size: 20px;
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 50px;
   }
 }
 </style>
