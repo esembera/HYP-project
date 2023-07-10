@@ -1,5 +1,14 @@
 <script setup>
 const activeMenuItem = useActiveMenuItem();
+
+const client = useSupabaseClient();
+
+let { data: projects, error } = await useAsyncData(
+  async () => {
+    return await client.from("projects").select("*");
+  },
+  { transform: (result) => result.data }
+);
 </script>
 
 <template>
@@ -58,22 +67,24 @@ const activeMenuItem = useActiveMenuItem();
     <div
       class="grid md:grid-cols-4 mt-20 mb-20 md:gap-4 md:ml-28 md:mr-28 gap-8 ml-4 mr-4 grid-cols-2"
     >
-      <div
-        class="relative flex justify-center"
-        v-for="project in projects"
-        :key="project.id"
-        @mouseover="setHoveredItem(project)"
-        @mouseleave="clearHoveredItem"
-      >
-        <img class="w-full" :src="`/img/projects/${project.image}`" />
+      <template v-for="project in projects">
         <div
-          class="detailsButton"
-          v-if="project.id == hoveredProject"
-          @click="showModal = true"
+          class="relative flex justify-center"
+          v-if="project.most_relevant == true"
+          :key="project.id"
+          @mouseover="setHoveredItem(project)"
+          @mouseleave="clearHoveredItem"
         >
-          Details
+          <img class="w-full" :src="`/img/projects/${project.image}`" />
+          <div
+            class="detailsButton"
+            v-if="project.id == hoveredProject"
+            @click="showModal = true"
+          >
+            Details
+          </div>
         </div>
-      </div>
+      </template>
     </div>
     <div class="container ml-0" style="margin: 0 auto">
       <div class="w-11/12 text-left md:mb-20 md:mt-0 mb-10 ml-6">
@@ -106,60 +117,6 @@ const activeMenuItem = useActiveMenuItem();
 export default {
   data() {
     return {
-      projects: [
-        {
-          id: 13,
-          name: "H Technology",
-          image: "h.png",
-          black_white_img: "h.png",
-          description:
-            "Zen Ventures recognized the passion for culinary and café excellence in Miguel Silva and Sonia Mendes, the founders of The Lisbon Café. The Zen 2021 investment enabled The Lisbon Café to establish itself as a vibrant cultural and culinary destination. Ava Rodriguez, an experienced café owner, was appointed as the supervisor to ensure the highest standards of coffee quality, menu development, and customer experience. With Zen Ventures' support, The Lisbon Café has become a beloved spot for coffee enthusiasts and food lovers, offering a cozy atmosphere, delectable pastries, and coffee creations.",
-          area: "Hospitality",
-          industries: ["Culinary Delights", "Café Culture"],
-          milestones: ["Zen Ventures Investment: 2021"],
-          founders: ["Miguel Silva", "Sonia Mendes"],
-          supervisor: "Ava Rodriguez",
-        },
-        {
-          id: 4,
-          name: "Public Anchor",
-          image: "publicAnchor.jpg",
-          black_white_img: "public anchor.png",
-          description:
-            "Zen Ventures recognized the passion for culinary and café excellence in Miguel Silva and Sonia Mendes, the founders of The Lisbon Café. The Zen 2021 investment enabled The Lisbon Café to establish itself as a vibrant cultural and culinary destination. Ava Rodriguez, an experienced café owner, was appointed as the supervisor to ensure the highest standards of coffee quality, menu development, and customer experience. With Zen Ventures' support, The Lisbon Café has become a beloved spot for coffee enthusiasts and food lovers, offering a cozy atmosphere, delectable pastries, and coffee creations.",
-          area: "Hospitality",
-          industries: ["Culinary Delights", "Café Culture"],
-          milestones: ["Zen Ventures Investment: 2021"],
-          founders: ["Miguel Silva", "Sonia Mendes"],
-          supervisor: "Ava Rodriguez",
-        },
-        {
-          id: 7,
-          name: "Nerve",
-          image: "nerve.png",
-          black_white_img: "nerve.png",
-          description:
-            "Zen Ventures recognized the passion for culinary and café excellence in Miguel Silva and Sonia Mendes, the founders of The Lisbon Café. The Zen 2021 investment enabled The Lisbon Café to establish itself as a vibrant cultural and culinary destination. Ava Rodriguez, an experienced café owner, was appointed as the supervisor to ensure the highest standards of coffee quality, menu development, and customer experience. With Zen Ventures' support, The Lisbon Café has become a beloved spot for coffee enthusiasts and food lovers, offering a cozy atmosphere, delectable pastries, and coffee creations.",
-          area: "Hospitality",
-          industries: ["Culinary Delights", "Café Culture"],
-          milestones: ["Zen Ventures Investment: 2021"],
-          founders: ["Miguel Silva", "Sonia Mendes"],
-          supervisor: "Ava Rodriguez",
-        },
-        {
-          id: 6,
-          name: "Calm",
-          image: "calm.png",
-          black_white_img: "calm.png",
-          description:
-            "Zen Ventures recognized the passion for culinary and café excellence in Miguel Silva and Sonia Mendes, the founders of The Lisbon Café. The Zen 2021 investment enabled The Lisbon Café to establish itself as a vibrant cultural and culinary destination. Ava Rodriguez, an experienced café owner, was appointed as the supervisor to ensure the highest standards of coffee quality, menu development, and customer experience. With Zen Ventures' support, The Lisbon Café has become a beloved spot for coffee enthusiasts and food lovers, offering a cozy atmosphere, delectable pastries, and coffee creations.",
-          area: "Hospitality",
-          industries: ["Culinary Delights", "Café Culture"],
-          milestones: ["Zen Ventures Investment: 2021"],
-          founders: ["Miguel Silva", "Sonia Mendes"],
-          supervisor: "Ava Rodriguez",
-        },
-      ],
       hoveredProject: null,
       showModal: false,
       childParameter: null,
