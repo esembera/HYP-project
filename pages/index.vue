@@ -3,7 +3,7 @@
 -->
 
 <script setup>
-const activeMenuItem = useActiveMenuItem();
+const activeMenuItem = useActiveMenuItem(); // custom hook
 </script>
 <template>
   <div class="md:container md:mx-auto">

@@ -58,7 +58,7 @@
         :src="`/img/projects/black and white/${localProject.black_white_img}`"
         class="modalPicture"
       />
-      <div class="dialogContainer">
+      <div class="dialogContainer" style="flex-direction: row">
         <div class="dialogColumn">
           <span class="previous" @click="previousProject">
             PREVIOUS&nbsp;&nbsp;

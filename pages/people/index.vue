@@ -1,6 +1,10 @@
 <!--
     Page with the list of all the people.
 -->
+
+<script setup>
+const activeMenuItem = useActiveMenuItem(); // custom hook
+</script>
 <template>
   <div class="md:container md:mx-auto">
     <div class="max-w-4xl md:mx-auto mt-20">
@@ -22,6 +26,14 @@
       class="grid md:grid-cols-3 md:gap-16 md:ml-28 md:mr-28 mt-20 mb-20 grid-cols-2 gap-8 ml-4 mr-4"
     >
       <PeopleCard v-for="person in people" :key="person.id" :person="person" />
+    </div>
+    <div class="w-11/12 text-right md:mb-20 mt-10 md:mt-0 mb-10">
+      <NuxtLink to="/projects" @click="activeMenuItem = 'projects'">
+        <span class="md:text-3xl open-sans text-xl"
+          >next <span class="font-bold">Projects</span>&nbsp;
+          <SvgArrow class="inline mb-1" />
+        </span>
+      </NuxtLink>
     </div>
   </div>
 </template>

@@ -75,7 +75,7 @@ const activeMenuItem = useActiveMenuItem();
         </div>
       </div>
     </div>
-    <div class="container ml-0">
+    <div class="container ml-0" style="margin: 0 auto">
       <div class="w-11/12 text-left md:mb-20 md:mt-0 mb-10 ml-6">
         <NuxtLink to="/projects" @click="activeMenuItem = 'projects'">
           <span class="md:text-3xl open-sans text-xl">
@@ -84,7 +84,7 @@ const activeMenuItem = useActiveMenuItem();
           </span>
         </NuxtLink>
       </div>
-      <div class="w-11/12 text-right md:mb-20 mt-10 md:mt-0 mb-10">
+      <div class="w-11/12 text-right md:mb-20 mt-10 md:mt-0 mb-10 mr-6">
         <NuxtLink to="/projects/by_area" @click="activeMenuItem = 'projects'">
           <span class="md:text-3xl open-sans text-xl"
             >next <span class="font-bold">Projects by area</span>&nbsp;
