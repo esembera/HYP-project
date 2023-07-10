@@ -1,3 +1,8 @@
+<!--
+    Footer component is a component which is displayed at the bottom of the page. It consists of 3 columns. 
+    First column contains social media links, second column contains links to other pages and third column contains additional info.
+-->
+
 <script setup>
 const activeMenuItem = useActiveMenuItem();
 </script>

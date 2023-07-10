@@ -1,3 +1,13 @@
+<!--
+    FAQ item component is a component which consists of question which is clickable. When clicked, the answer is shown.
+
+    PROPS:
+    - question: question to display
+    - answer: answer to display
+    - hasContactUsBtn: boolean that detemermines wheter contact us button is shown or not
+    - hasAreasBtn: boolean that detemermines wheter areas button is shown or not
+-->
+
 <script setup>
 const activeMenuItem = useActiveMenuItem();
 </script>

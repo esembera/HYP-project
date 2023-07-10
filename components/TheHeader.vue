@@ -1,3 +1,8 @@
+<!--
+  Header component is a component which is displayed at the top of the page. It consists of logo, burger menu and navigation menu.
+  Only one of those two menus is shown depending on wheter the user is on mobile or desktop.
+-->
+
 <script setup>
 const activeMenuItem = useActiveMenuItem();
 </script>

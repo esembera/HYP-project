@@ -1,3 +1,17 @@
+<!--
+    People card is a component which consists of person's image, name, position, description and projects.
+
+    PROPS:
+    - person: person to display
+
+    person is an object with the following properties:
+    - name: name of the person
+    - position: position of the person
+    - description: description of the person
+    - projects: array of projects the person is working on
+    - image: image of the person
+-->
+
 <template>
   <div>
     <div>

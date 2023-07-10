@@ -1,3 +1,23 @@
+<!--
+    Project Details component is a component which is displayed when the user clicks on a project. 
+    It consists of project name, description, area, industries, milestones, founders, supervisor and image.
+
+    PROPS:
+    - project: project to display
+    - projects: array of all projects
+
+    project is an object with the following properties:
+    - id: id of the project
+    - name: name of the project
+    - description: description of the project
+    - area: area of the project
+    - industries: industries of the project
+    - milestones: milestones of the project
+    - founders: founders of the project
+    - supervisor: supervisor of the project
+    - black_white_img: image of the project
+-->
+
 <template>
   <div
     class="modal-overlay"
