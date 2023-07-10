@@ -1,5 +1,4 @@
 <template>
-    import { SvgArrow } from '.nuxt/components';
     <div class="modal-overlay" @click="$emit('close-modal')" v-if="localProject !== null">
         <div class="modal" @click.stop>
             <div class="close" @click="$emit('close-modal')">
@@ -41,6 +40,9 @@
                     </span>
                 </div>
             </div>
+
+            <img :src="`/img/projects/black and white/${project.black_white_img}`"
+                style="position: absolute; bottom: 0; right: 0; width: 250px;" />
         </div>
     </div>
 </template>
@@ -121,6 +123,7 @@ export default {
     height: 666px;
     border-radius: 50px;
     padding: 15px;
+    position: relative;
 }
 
 .close {

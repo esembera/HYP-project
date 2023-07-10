@@ -84,7 +84,7 @@ const activeMenuItem = useActiveMenuItem();
         </span>
       </NuxtLink>
     </div>
-    <ProjectDetails v-if="showModal" @close-modal="showModal = false;" :project="childParameter" :projects="projects" />
+    <ProjectDetails v-show="showModal" @close-modal="showModal = false;" :project="childParameter" :projects="projects" />
   </div>
 </template>
 
