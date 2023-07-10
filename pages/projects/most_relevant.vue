@@ -108,7 +108,7 @@ let { data: projects, error } = await useAsyncData(
       v-show="showModal"
       @close-modal="showModal = false"
       :project="childParameter"
-      :projects="projects"
+      :projects="getMostRelevantProjects(projects)"
     />
   </div>
 </template>
@@ -129,6 +129,9 @@ export default {
     },
     clearHoveredItem() {
       this.hoveredProject = null;
+    },
+    getMostRelevantProjects(projects) {
+      return projects.filter((project) => project.most_relevant === true);
     },
   },
 };

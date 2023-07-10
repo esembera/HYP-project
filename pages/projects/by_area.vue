@@ -57,7 +57,7 @@ let { data: projects, error } = await useAsyncData(
     <div
       class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
       style="font-family: ArchiveBlack"
-      @click="hospitalityActive = !hospitalityActive"
+      @click="makeHospitalityActiveOtherAreasInactive()"
     >
       HOSPITALITY
     </div>
@@ -88,7 +88,7 @@ let { data: projects, error } = await useAsyncData(
     <div
       class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
       style="font-family: ArchiveBlack"
-      @click="creativeActive = !creativeActive"
+      @click="makeCreativeActiveOtherAreasInactive()"
     >
       CREATIVE SOLUTIONS
     </div>
@@ -102,13 +102,13 @@ let { data: projects, error } = await useAsyncData(
           class="relative flex justify-center"
           v-if="project.area === 'creative'"
           :key="project.id"
-          @mouseover="setHoveredItem(project.id)"
+          @mouseover="setHoveredItem(project)"
           @mouseleave="clearHoveredItem"
         >
           <img class="w-full" :src="`/img/projects/${project.image}`" />
           <div
             class="detailsButton"
-            v-if="project == hoveredProject"
+            v-if="project.id == hoveredProject"
             @click="showModal = true"
           >
             Details
@@ -119,7 +119,7 @@ let { data: projects, error } = await useAsyncData(
     <div
       class="md:text-5xl font-bold text-2xl text-center hover:cursor-pointer mt-10"
       style="font-family: ArchiveBlack"
-      @click="technologyActive = !technologyActive"
+      @click="makeTechnologyActiveOtherAreasInactive()"
     >
       TECHNOLOGY & INOVATION
     </div>
@@ -162,7 +162,7 @@ let { data: projects, error } = await useAsyncData(
       v-show="showModal"
       @close-modal="showModal = false"
       :project="childParameter"
-      :projects="projects"
+      :projects="getActiveProjects(projects)"
     />
   </div>
 </template>
@@ -186,6 +186,32 @@ export default {
     },
     clearHoveredItem() {
       this.hoveredProject = null;
+    },
+    getActiveProjects(projects) {
+      if (this.hospitalityActive) {
+        return projects.filter((project) => project.area === "hospitality");
+      }
+      if (this.creativeActive) {
+        return projects.filter((project) => project.area === "creative");
+      }
+      if (this.technologyActive) {
+        return projects.filter((project) => project.area === "technology");
+      }
+    },
+    makeCreativeActiveOtherAreasInactive() {
+      this.creativeActive = true;
+      this.hospitalityActive = false;
+      this.technologyActive = false;
+    },
+    makeHospitalityActiveOtherAreasInactive() {
+      this.creativeActive = false;
+      this.hospitalityActive = true;
+      this.technologyActive = false;
+    },
+    makeTechnologyActiveOtherAreasInactive() {
+      this.creativeActive = false;
+      this.hospitalityActive = false;
+      this.technologyActive = true;
     },
   },
 };

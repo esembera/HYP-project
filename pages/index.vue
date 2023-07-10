@@ -172,7 +172,7 @@ let { data: questions, errorQuestions } = await useAsyncData(
     v-show="showModal"
     @close-modal="showModal = false"
     :project="childParameter"
-    :projects="recentProjects"
+    :projects="getRecentProjects(projects)"
   />
 </template>
 
@@ -192,6 +192,9 @@ export default {
     },
     clearHoveredItem() {
       this.hoveredProject = null;
+    },
+    getRecentProjects(projects) {
+      return projects.filter((project) => project.is_recent === true);
     },
   },
 };

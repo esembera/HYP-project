@@ -173,7 +173,7 @@ export default {
 }
 
 #projectName {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 1000;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
